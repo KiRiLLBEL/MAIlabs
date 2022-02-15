@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1635452128 source:/home/kirill/c/lab9/9/main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
