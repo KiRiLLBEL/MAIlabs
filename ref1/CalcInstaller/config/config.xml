@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Calculator</Name>
+    <Version>1.0.0</Version>
+    <Title>Calculator installation</Title>
+    <Publisher>KiRiLLBEl</Publisher>
+    <StartMenuDir>Calculator</StartMenuDir>
+    <TargetDir>@RootDir@Program Files (x86)\Calculator</TargetDir>
+    <AllowSpaceInPath>true</AllowSpaceInPath>
+</Installer>
