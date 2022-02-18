@@ -1,0 +1,603 @@
+________cmp_________________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~$ cd Projects/
+kirill@kirill-Vostro-5402:~/Projects$ cd lab20
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cat > file1.txt
+Hello world!
+This is first file
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cat > file2.txt
+Hello world!
+This is second file
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cmp file1.txt file2.txt 
+file1.txt file2.txt различаются: байт 22, строка 2
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cmp -b file1.txt file2.txt 
+file1.txt file2.txt различаются: байт 22, строка 2 равен 146 f 163 s
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cmp -l file1.txt file2.txt
+22 146 163
+23 151 145
+24 162 143
+25 163 157
+26 164 156
+27  40 144
+28 146  40
+29 151 146
+30 154 151
+31 145 154
+32  12 145
+cmp: EOF в file1.txt после байта 32
+kirill@kirill-Vostro-5402:~/Projects/lab20$ 
+_________comm_______________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cat > comm1
+aaa
+bbb
+ddd
+ffff
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cat > comm2
+cccc
+ggggg
+kkkkkkk
+kirill@kirill-Vostro-5402:~/Projects/lab20$ comm comm1 comm2
+aaa
+bbb
+	cccc
+ddd
+ffff
+	ggggg
+	kkkkkkk
+kirill@kirill-Vostro-5402:~/Projects/lab20$ comm -1 comm1 comm2
+cccc
+ggggg
+kkkkkkk
+kirill@kirill-Vostro-5402:~/Projects/lab20$ comm -2 comm1 comm2
+aaa
+bbb
+ddd
+ffff
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cat > comm3
+aaa
+bbb
+hhhhh
+kirill@kirill-Vostro-5402:~/Projects/lab20$ comm -12 comm1 comm3
+aaa
+bbb
+kirill@kirill-Vostro-5402:~/Projects/lab20$ ^C
+kirill@kirill-Vostro-5402:~/Projects/lab20$ 
+_________wc________________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cat > fileWC.txt
+Hello world
+this test file
+i will show you
+power of wc command
+kirill@kirill-Vostro-5402:~/Projects/lab20$ wc
+Linux
+Is
+Best
+Os
+      4       4      17
+kirill@kirill-Vostro-5402:~/Projects/lab20$ wc fileWC.txt 
+ 4 13 63 fileWC.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ wc -c fileWC.txt
+63 fileWC.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ wc -m fileWC.txt 
+63 fileWC.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ wc -l fileWC.txt
+4 fileWC.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ wc -w fileWC.txt
+13 fileWC.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ echo "Hello World" | wc
+      1       2      12
+kirill@kirill-Vostro-5402:~/Projects/lab20$ wc *.txt
+  2   6  32 file1.txt
+  2   6  33 file2.txt
+  4  13  63 fileWC.txt
+  8  25 128 итого
+kirill@kirill-Vostro-5402:~/Projects/lab20$ 
+____________________________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20$ dd if=fileWC.txt of=CopyDir/CopyfileWC.txt
+0+1 записей получено
+0+1 записей отправлено
+63 байта скопировано, 0,000290187 s, 217 kB/s
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cd CopyDir/
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ ls
+CopyfileWC.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat < CopyfileWC.txt 
+Hello world
+this test file
+i will show you
+power of wc command
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ 
+____________diff____________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20$ mkdir dir1
+kirill@kirill-Vostro-5402:~/Projects/lab20$ mkdir dir2
+kirill@kirill-Vostro-5402:~/Projects/lab20$ ls
+dir1  dir2  file1.txt  file2.txt  Protocol  script.awk  script.sh  testfile
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cd dir1
+kirill@kirill-Vostro-5402:~/Projects/lab20/dir1$ cat > test1.txt
+First dir 
+kirill@kirill-Vostro-5402:~/Projects/lab20/dir1$ cd ..
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cd dir2
+kirill@kirill-Vostro-5402:~/Projects/lab20/dir2$ cat > test2.txt
+Second dir
+kirill@kirill-Vostro-5402:~/Projects/lab20/dir2$ touch changelog1
+kirill@kirill-Vostro-5402:~/Projects/lab20/dir2$ cd ..
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cd dir1
+kirill@kirill-Vostro-5402:~/Projects/lab20/dir1$ touch changelog13
+kirill@kirill-Vostro-5402:~/Projects/lab20/dir1$ cd ..
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cat > exclude
+changelog*
+kirill@kirill-Vostro-5402:~/Projects/lab20$ diff -r -X exclude dir1 dir2
+Только в dir1: test1.txt
+Только в dir2: test2.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ diff -r dir1 dir2
+Только в dir2: changelog1
+Только в dir1: changelog13
+Только в dir1: test1.txt
+Только в dir2: test2.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$
+__________grep______________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat > grepTest.txt
+Kirill
+Linux is the best os
+Welcome to the faq8
+linux moment
+KIRILL author
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ grep linux grepTest.txt 
+linux moment
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ grep .inux grepTest.txt 
+Linux is the best os
+linux moment
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ grep -c .inux grepTest.txt 
+2
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ grep -v .inux grepTest.txt 
+Kirill
+Welcome to the faq8
+KIRILL author
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ dd if=grepTest.txt of=CopyGrepTest.txt
+0+1 записей получено
+0+1 записей отправлено
+75 байт скопировано, 0,000316476 s, 237 kB/s
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ grep -l the *repTest.txt
+CopyGrepTest.txt
+grepTest.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ grep -r the ~/Projects/lab20
+/home/kirill/Projects/lab20/CopyDir/CopyGrepTest.txt:Linux is the best os
+/home/kirill/Projects/lab20/CopyDir/CopyGrepTest.txt:Welcome to the faq8
+/home/kirill/Projects/lab20/CopyDir/grepTest.txt:Linux is the best os
+/home/kirill/Projects/lab20/CopyDir/grepTest.txt:Welcome to the faq8
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ grep -h -r the ~/Projects/lab20
+Linux is the best os
+Welcome to the faq8
+Linux is the best os
+Welcome to the faq8
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ grep -n faq8 grepTest.txt 
+3:Welcome to the faq8
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ 
+______join__________________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat > JoinTest.txt
+aaa
+bbbbb
+ccc
+hhhhhhhhhh
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat > JoinTest2.txt
+bbbbbbb
+ddd
+ffffff
+hhhhhhhhhh
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ join JoinTest.txt JoinTest2.txt 
+hhhhhhhhhh
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ join -a 1 JoinTest.txt JoinTest2.txt 
+aaa
+bbbbb
+ccc
+hhhhhhhhhh
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ join -a 2 JoinTest.txt JoinTest2.txt 
+bbbbbbb
+ddd
+ffffff
+hhhhhhhhhh
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ join -v 2 JoinTest.txt JoinTest2.txt 
+bbbbbbb
+ddd
+ffffff
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ join -1 JoinTest.txt JoinTest2.txt 
+____________________________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat > sort.txt
+France
+Spanish
+Art      
+Candy
+Linux
+Block
+information technology
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ sort sort.txt 
+Art
+Block
+Candy
+France
+information technology
+Linux
+Spanish
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ sort -r sort.txt 
+Spanish
+Linux
+information technology
+France
+Candy
+Block
+Art
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ ls -l | sort -k9
+итого 24
+-rw-rw-r-- 1 kirill kirill 63 фев 17 21:32 CopyfileWC.txt
+-rw-rw-r-- 1 kirill kirill 75 фев 17 23:13 CopyGrepTest.txt
+-rw-rw-r-- 1 kirill kirill 75 фев 17 23:09 grepTest.txt
+-rw-rw-r-- 1 kirill kirill 30 фев 17 23:24 JoinTest2.txt
+-rw-rw-r-- 1 kirill kirill 25 фев 17 23:24 JoinTest.txt
+-rw-rw-r-- 1 kirill kirill 60 фев 17 23:32 sort.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ nano sort.txt 
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat < sort.txt 
+France
+Spanish
+Art
+Art
+Candy
+Candy
+Linux
+Block
+information technology
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ sort -u sort.txt 
+Art
+Block
+Candy
+France
+information technology
+Linux
+Spanish
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat < sort.txt 
+France
+Spanish
+Art
+Art
+Candy
+Candy
+Linux
+Block
+information technology
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ sort -u -o sort.txt sort.txt 
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat < sort.txt 
+Art
+Block
+Candy
+France
+information technology
+Linux
+Spanish
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ 
+____________tail____________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat > tail.txt
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ tail -n 3 tail.txt 
+1
+1
+1
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ tail -n 5 tail.txt 
+1
+1
+1
+1
+1
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ tail -f tail.txt 
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+^Z
+[1]+  Остановлен    tail -f tail.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ nano tail.txt 
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat < tail.txt 
+1
+1
+1
+1
+1
+1
+1
+1
+Hello 1
+1
+1
+Hello 2
+1
+1
+Hello 3
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ tail tail.txt | grep Hello
+Hello 1
+Hello 2
+Hello 3
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ 
+________________________tee_________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ ls | tee tee.txt
+CopyfileWC.txt
+CopyGrepTest.txt
+grepTest.txt
+JoinTest2.txt
+JoinTest.txt
+sort.txt
+tail.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat < tee.txt 
+CopyfileWC.txt
+CopyGrepTest.txt
+grepTest.txt
+JoinTest2.txt
+JoinTest.txt
+sort.txt
+tail.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ pwd | tee -a tee.txt 
+/home/kirill/Projects/lab20/CopyDir
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat < tee.txt 
+CopyfileWC.txt
+CopyGrepTest.txt
+grepTest.txt
+JoinTest2.txt
+JoinTest.txt
+sort.txt
+tail.txt
+/home/kirill/Projects/lab20/CopyDir
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ 
+____________________tr______________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ tr m n
+motificatiom
+notification
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ tr -d [:space:]
+Unfor getable
+Unforgetable
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ tr -d [:upper:]
+AsfDfdfdFDFDA
+sffdfd
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ tr -s B f
+BBBerggfff
+ferggf
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ tr -s B
+BBBfdfBBBBBdfh
+BfdfBdfh
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ ls
+CopyfileWC.txt    grepTest.txt   JoinTest.txt  tail.txt
+CopyGrepTest.txt  JoinTest2.txt  sort.txt      tee.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ ls | tr '.' '-'
+CopyfileWC-txt
+CopyGrepTest-txt
+grepTest-txt
+JoinTest2-txt
+JoinTest-txt
+sort-txt
+tail-txt
+tee-txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ 
+_____________uniq___________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ echo -e kirill\\nlinux\\nlinux\\nOS | uniq
+kirill
+linux
+OS
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ echo -e kirill\\nlinux\\nlinux\\nOS | uniq -c
+      1 kirill
+      2 linux
+      1 OS
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ 
+______________________od____________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ od tee.txt
+0000000 067503 074560 064546 062554 041527 072056 072170 041412
+0000020 070157 043571 062562 052160 071545 027164 074164 005164
+0000040 071147 070145 062524 072163 072056 072170 045012 064557
+0000060 052156 071545 031164 072056 072170 045012 064557 052156
+0000100 071545 027164 074164 005164 067563 072162 072056 072170
+0000120 072012 064541 027154 074164 005164 064057 066557 027545
+0000140 064553 064562 066154 050057 067562 062552 072143 027563
+0000160 060554 031142 027460 067503 074560 064504 005162
+0000176
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ od -t a tee.txt
+0000000   C   o   p   y   f   i   l   e   W   C   .   t   x   t  nl   C
+0000020   o   p   y   G   r   e   p   T   e   s   t   .   t   x   t  nl
+0000040   g   r   e   p   T   e   s   t   .   t   x   t  nl   J   o   i
+0000060   n   T   e   s   t   2   .   t   x   t  nl   J   o   i   n   T
+0000100   e   s   t   .   t   x   t  nl   s   o   r   t   .   t   x   t
+0000120  nl   t   a   i   l   .   t   x   t  nl   /   h   o   m   e   /
+0000140   k   i   r   i   l   l   /   P   r   o   j   e   c   t   s   /
+0000160   l   a   b   2   0   /   C   o   p   y   D   i   r  nl
+0000176
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ od -t c tee.txt
+0000000   C   o   p   y   f   i   l   e   W   C   .   t   x   t  \n   C
+0000020   o   p   y   G   r   e   p   T   e   s   t   .   t   x   t  \n
+0000040   g   r   e   p   T   e   s   t   .   t   x   t  \n   J   o   i
+0000060   n   T   e   s   t   2   .   t   x   t  \n   J   o   i   n   T
+0000100   e   s   t   .   t   x   t  \n   s   o   r   t   .   t   x   t
+0000120  \n   t   a   i   l   .   t   x   t  \n   /   h   o   m   e   /
+0000140   k   i   r   i   l   l   /   P   r   o   j   e   c   t   s   /
+0000160   l   a   b   2   0   /   C   o   p   y   D   i   r  \n
+0000176
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ od -t o2 tee.txt
+0000000 067503 074560 064546 062554 041527 072056 072170 041412
+0000020 070157 043571 062562 052160 071545 027164 074164 005164
+0000040 071147 070145 062524 072163 072056 072170 045012 064557
+0000060 052156 071545 031164 072056 072170 045012 064557 052156
+0000100 071545 027164 074164 005164 067563 072162 072056 072170
+0000120 072012 064541 027154 074164 005164 064057 066557 027545
+0000140 064553 064562 066154 050057 067562 062552 072143 027563
+0000160 060554 031142 027460 067503 074560 064504 005162
+0000176
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ od -t x2 tee.txt
+0000000 6f43 7970 6966 656c 4357 742e 7478 430a
+0000020 706f 4779 6572 5470 7365 2e74 7874 0a74
+0000040 7267 7065 6554 7473 742e 7478 4a0a 696f
+0000060 546e 7365 3274 742e 7478 4a0a 696f 546e
+0000100 7365 2e74 7874 0a74 6f73 7472 742e 7478
+0000120 740a 6961 2e6c 7874 0a74 682f 6d6f 2f65
+0000140 696b 6972 6c6c 502f 6f72 656a 7463 2f73
+0000160 616c 3262 2f30 6f43 7970 6944 0a72
+0000176
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ od -t d2 tee.txt
+0000000  28483  31088  26982  25964  17239  29742  29816  17162
+0000020  28783  18297  25970  21616  29541  11892  30836   2676
+0000040  29287  28773  25940  29811  29742  29816  18954  26991
+0000060  21614  29541  12916  29742  29816  18954  26991  21614
+0000100  29541  11892  30836   2676  28531  29810  29742  29816
+0000120  29706  26977  11884  30836   2676  26671  28015  12133
+0000140  26987  26994  27756  20527  28530  25962  29795  12147
+0000160  24940  12898  12080  28483  31088  26948   2674
+0000176
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ 
+______________________sum____________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ od tee.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ sum tee.txt
+37160     1
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ sum -s tee.txt
+11730 1 tee.txt
+___________________________cut_______________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ echo "Little nightmare" | cut -b 1,5,10
+Llg
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ echo "Little nightmare" | cut -b 1-10
+Little nig
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cat > cut.txt
+grrrg
+trgv
+ytyrg
+GTgtg
+nt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cut -b 1-2 cut.txt 
+gr
+tr
+yt
+GT
+nt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cut -c 1-2 cut.txt 
+gr
+tr
+yt
+GT
+nt
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cut -c 10- cut.txt 
+
+
+
+
+
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ cut -c 2- cut.txt 
+rrrg
+rgv
+tyrg
+Tgtg
+t
+kirill@kirill-Vostro-5402:~/Projects/lab20/CopyDir$ 
+_____________________vim_____________________________________________________________________________________________________________________
+Hello world
+This test file
+For test vim
+How to quit?
+~                                                                                                    
+-- ВСТАВКА --  
+Hello world
+This is new line
+This test file
+For test vim
+How to quit?
+
+Hello world
+This is new line
+This test file
+For test vim
+How to quit?
+~                                                                                                                                                                                                           
+?Hello  
+____________________________tar______________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20$ tar -cvf test.tar test.txt 
+test.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ tar -tf test.tar 
+test.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ mkdir TestDir
+kirill@kirill-Vostro-5402:~/Projects/lab20$ tar -C "TestDir/" -xvf test.tar 
+test.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cd TestDir/
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ ls
+test.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ 
+_________________________gzip_________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ gzip test.txt 
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ ls
+test.txt.gz
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ gzip -l test.txt.gz 
+         compressed        uncompressed  ratio uncompressed_name
+                 89                  70  11.4% test.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ gzip -d test.txt.gz 
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ ls
+test.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ cd ..
+kirill@kirill-Vostro-5402:~/Projects/lab20$ gzip -r TestDir/
+kirill@kirill-Vostro-5402:~/Projects/lab20$ ls
+NewText.txt  Protocol  script.awk  script.sh  Task.txt  TestDir  test.tar  test.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cd TestDir/
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ ls
+test.txt.gz
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ cd ..
+kirill@kirill-Vostro-5402:~/Projects/lab20$ gzip -r -d TestDir/
+kirill@kirill-Vostro-5402:~/Projects/lab20$ cd TestDir/
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ ls
+test.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ 
+______________________________________ed_____________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ ed
+P
+*a
+Hello world
+I use ed editor
+Linux moment
+.
+*,pn
+1	Hello world
+2	I use ed editor
+3	Linux moment
+*1
+Hello world
+*w test.txt
+41
+*q
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ cat < test.txt 
+Hello world
+I use ed editor
+Linux moment
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ 
+________________bzip2________________________________________________________________________________________________________________________
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ bzip2 test.txt 
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ ls
+test.txt.bz2
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ bzip2 -d test.txt 
+bzip2: Can't open input file test.txt: No such file or directory.
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ bzip2 -d test.txt.bz2 
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ ls
+test.txt
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ bzip2 -k test.txt 
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ ls
+test.txt  test.txt.bz2
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ rm test.txt.bz2 
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ bzip2 -9 test.txt 
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ bzip2 -vt test.txt.bz2 
+  test.txt.bz2: ok
+kirill@kirill-Vostro-5402:~/Projects/lab20/TestDir$ 
