@@ -1,0 +1,50 @@
+es should be short, and to the point. If you have some random integer loop counter, it should probably be called i. Calling it loop_counter is non-productive, if there is no chance of it being mis-understood. Similarly, tmp can be just about any type of variable that is used to hold a temporary value.
+
+If you are afraid to mix up your local variable names, you have another problem, which is called the function-growth-hormone-imbalance syndrome. See chapter 6 (Functions).
+
+For symbol names and documentation, avoid introducing new usage of ‘master / slave’ (or ‘slave’ independent of ‘master’) and ‘blacklist / whitelist’.
+
+Recommended replacements for ‘master / slave’ are:
+‘{primary,main} / {secondary,replica,subordinate}’ ‘{initiator,requester} / {target,responder}’ ‘{controller,host} / {device,worker,proxy}’ ‘leader / follower’ ‘director / performer’
+
+Recommended replacements for ‘blacklist/whitelist’ are:
+‘denylist / allowlist’ ‘blocklist / passlist’
+
+Exceptions for introducing new usage is to maintain a userspace ABI/API, or when updating code for an existing (as of 2020) hardware or protocol specification that mandates those terms. For new specifications translate specification usage of the terminology to the kernel coding standard where possible.
+
+5) Typedefs
+Please don’t use things like vps_t. It’s a mistake to use typedef for structures and pointers. When you see a
+
+vps_t a;
+in the source, what does it mean? In contrast, if it says
+
+struct virtual_container *a;
+you can actually tell what a is.
+
+Lots of people think that typedefs help readability. Not so. They are useful only for:
+
+totally opaque objects (where the typedef is actively used to hide what the object is).
+
+Example: pte_t etc. opaque objects that you can only access using the proper accessor functions.
+
+Note
+
+Opaqueness and accessor functions are not good in themselves. The reason we have them for things like pte_t etc. is that there really is absolutely zero portably accessible information there.
+
+Clear integer types, where the abstraction helps avoid confusion whether it is int or long.
+
+u8/u16/u32 are perfectly fine typedefs, although they fit into category (d) better than here.
+
+Note
+
+Again - there needs to be a reason for this. If something is unsigned long, then there’s no reason to do
+
+typedef unsigned long myflags_t;
+
+but if there is a clear reason for why it under certain circumstances might be an unsigned int and under other configurations might be unsigned long, then by all means go ahead and use a typedef.
+
+when you use sparse to literally create a new type for type-checking.
+
+New types which are identical to standard C99 types, in certain exceptional circumstances.
+
+Although it would only take a short amount of time for the eyes and brain to become accustomed to the standard types like uint32_t

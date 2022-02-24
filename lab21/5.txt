@@ -1,0 +1,34 @@
+, some people object to their use anyway.
+
+Therefore, the Linux-specific u8/u16/u32/u64 types and their signed equivalents which are identical to standard types are permitted – although they are not mandatory in new code of your own.
+
+When editing existing code which already uses one or the other set of types, you should conform to the existing choices in that code.
+
+Types safe for use in userspace.
+
+In certain structures which are visible to userspace, we cannot require C99 types and cannot use the u32 form above. Thus, we use __u32 and similar types in all structures which are shared with userspace.
+
+Maybe there are other cases too, but the rule should basically be to NEVER EVER use a typedef unless you can clearly match one of those rules.
+
+In general, a pointer, or a struct that has elements that can reasonably be directly accessed should never be a typedef.
+
+6) Functions
+Functions should be short and sweet, and do just one thing. They should fit on one or two screenfuls of text (the ISO/ANSI screen size is 80x24, as we all know), and do one thing and do that well.
+
+The maximum length of a function is inversely proportional to the complexity and indentation level of that function. So, if you have a conceptually simple function that is just one long (but simple) case-statement, where you have to do lots of small things for a lot of different cases, it’s OK to have a longer function.
+
+However, if you have a complex function, and you suspect that a less-than-gifted first-year high-school student might not even understand what the function is all about, you should adhere to the maximum limits all the more closely. Use helper functions with descriptive names (you can ask the compiler to in-line them if you think it’s performance-critical, and it will probably do a better job of it than you would have done).
+
+Another measure of the function is the number of local variables. They shouldn’t exceed 5-10, or you’re doing something wrong. Re-think the function, and split it into smaller pieces. A human brain can generally easily keep track of about 7 different things, anything more and it gets confused. You know you’re brilliant, but maybe you’d like to understand what you did 2 weeks from now.
+
+In source files, separate functions with one blank line. If the function is exported, the EXPORT macro for it should follow immediately after the closing function brace line. E.g.:
+
+int system_is_up(void)
+{
+        return system_state == SYSTEM_RUNNING;
+}
+EXPORT_SYMBOL(system_is_up);
+6.1) Function prototypes
+In function prototypes, include parameter names with their data types. Although this is not required by the C language, it is preferred in Linux because it is a simple way to add valuable information for the reader.
+
+Do not use the extern keyword with function declarations as this makes lines longer and isn’t strictly necessa

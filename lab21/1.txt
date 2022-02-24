@@ -1,0 +1,60 @@
+Linux kernel coding style
+This is a short document describing the preferred coding style for the linux kernel. Coding style is very personal, and I won’t force my views on anybody, but this is what goes for anything that I have to be able to maintain, and I’d prefer it for most other things too. Please at least consider the points made here.
+
+First off, I’d suggest printing out a copy of the GNU coding standards, and NOT read it. Burn them, it’s a great symbolic gesture.
+
+Anyway, here goes:
+
+1) Indentation
+Tabs are 8 characters, and thus indentations are also 8 characters. There are heretic movements that try to make indentations 4 (or even 2!) characters deep, and that is akin to trying to define the value of PI to be 3.
+
+Rationale: The whole idea behind indentation is to clearly define where a block of control starts and ends. Especially when you’ve been looking at your screen for 20 straight hours, you’ll find it a lot easier to see how the indentation works if you have large indentations.
+
+Now, some people will claim that having 8-character indentations makes the code move too far to the right, and makes it hard to read on a 80-character terminal screen. The answer to that is that if you need more than 3 levels of indentation, you’re screwed anyway, and should fix your program.
+
+In short, 8-char indents make things easier to read, and have the added benefit of warning you when you’re nesting your functions too deep. Heed that warning.
+
+The preferred way to ease multiple indentation levels in a switch statement is to align the switch and its subordinate case labels in the same column instead of double-indenting the case labels. E.g.:
+
+switch (suffix) {
+case 'G':
+case 'g':
+        mem <<= 30;
+        break;
+case 'M':
+case 'm':
+        mem <<= 20;
+        break;
+case 'K':
+case 'k':
+        mem <<= 10;
+        fallthrough;
+default:
+        break;
+}
+Don’t put multiple statements on a single line unless you have something to hide:
+
+if (condition) do_this;
+  do_something_everytime;
+Don’t use commas to avoid using braces:
+
+if (condition)
+        do_this(), do_that();
+Always uses braces for multiple statements:
+
+if (condition) {
+        do_this();
+        do_that();
+}
+Don’t put multiple assignments on a single line either. Kernel coding style is super simple. Avoid tricky expressions.
+
+Outside of comments, documentation and except in Kconfig, spaces are never used for indentation, and the above example is deliberately broken.
+
+Get a decent editor and don’t leave whitespace at the end of lines.
+
+2) Breaking long lines and strings
+Coding style is all about readability and maintainability using commonly available tools.
+
+The preferred limit on the length of a single line is 80 columns.
+
+Statements longer than 80 columns should be broken into sensible chunks, unless exceeding 80 columns significantly increases read

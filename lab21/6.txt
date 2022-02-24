@@ -1,0 +1,70 @@
+ry.
+
+When writing function prototypes, please keep the order of elements regular. For example, using this function declaration example:
+
+__init void * __must_check action(enum magic value, size_t size, u8 count,
+                                  char *fmt, ...) __printf(4, 5) __malloc;
+The preferred order of elements for a function prototype is:
+
+storage class (below, static __always_inline, noting that __always_inline is technically an attribute but is treated like inline)
+
+storage class attributes (here, __init – i.e. section declarations, but also things like __cold)
+
+return type (here, void *)
+
+return type attributes (here, __must_check)
+
+function name (here, action)
+
+function parameters (here, (enum magic value, size_t size, u8 count, char *fmt, ...), noting that parameter names should always be included)
+
+function parameter attributes (here, __printf(4, 5))
+
+function behavior attributes (here, __malloc)
+
+Note that for a function definition (i.e. the actual function body), the compiler does not allow function parameter attributes after the function parameters. In these cases, they should go after the storage class attributes (e.g. note the changed position of __printf(4, 5) below, compared to the declaration example above):
+
+static __always_inline __init __printf(4, 5) void * __must_check action(enum magic value,
+               size_t size, u8 count, char *fmt, ...) __malloc
+{
+       ...
+}
+7) Centralized exiting of functions
+Albeit deprecated by some people, the equivalent of the goto statement is used frequently by compilers in form of the unconditional jump instruction.
+
+The goto statement comes in handy when a function exits from multiple locations and some common work such as cleanup has to be done. If there is no cleanup needed then just return directly.
+
+Choose label names which say what the goto does or why the goto exists. An example of a good name could be out_free_buffer: if the goto frees buffer. Avoid using GW-BASIC names like err1: and err2:, as you would have to renumber them if you ever add or remove exit paths, and they make correctness difficult to verify anyway.
+
+The rationale for using gotos is:
+
+unconditional statements are easier to understand and follow
+
+nesting is reduced
+
+errors by not updating individual exit points when making modifications are prevented
+
+saves the compiler work to optimize redundant code away ;)
+
+int fun(int a)
+{
+        int result = 0;
+        char *buffer;
+
+        buffer = kmalloc(SIZE, GFP_KERNEL);
+        if (!buffer)
+                return -ENOMEM;
+
+        if (condition1) {
+                while (loop1) {
+                        ...
+                }
+                result = 1;
+                goto out_free_buffer;
+        }
+        ...
+out_free_buffer:
+        kfree(buffer);
+        return result;
+}
+A common type of bug to be aware of is one err bugs which look like this:
