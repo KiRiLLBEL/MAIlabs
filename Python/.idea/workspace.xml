@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0838fccd-e14a-44f4-be19-ca7971206047" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/project-colors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/v17/.suo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/v17/Browse.VC.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/v17/ipch/AutoPCH/1139637a6713fec7/MAIN.ipch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/v17/ipch/AutoPCH/f14694435b2a79f3/QTTEST.ipch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.qrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.vcxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.vcxproj.filters" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.vcxproj.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.exe.recipe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/CL.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/CL.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/CL.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/QTTEST.lastbuildstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/QTTEST.write.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/link.command.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/link.read.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/link.write.1.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/moc.read.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/moc.write.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/rcc.read.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/rcc.write.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/uic.read.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/uic.write.1u.tlog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/main.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/moc/moc_QTTEST.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/moc_QTTEST.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/qtvars_x64_Debug.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/.qmake.stash" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/moc_predefs.h.cbt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/props.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars.vcxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars.vcxproj.filters" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars_x64_Debug.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qrc_QTTEST.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qt_work.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/rcc/qrc_QTTEST.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/uic/ui_QTTEST.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/vc143.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/moc/moc_QTTEST.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/qtvars_x64_Release.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/.qmake.stash" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/6F4E0F90-FE89-4365-B067-85D0570055B5.QTTEST.designtime.idx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/moc_predefs.h.cbt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/props.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars.vcxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars.vcxproj.filters" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars_x64_Release.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qt_work.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/rcc/qrc_QTTEST.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/uic/ui_QTTEST.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/x64/Debug/QTTEST.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/x64/Debug/QTTEST.ilk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/x64/Debug/QTTEST.pdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab21/Lab21Otchet.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab21/Lab21Otchet.pdf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d002febb-ead2-48e3-a9e3-6afe66cf6c5c" />
+        <option name="url" value="https://github.com/KiRiLLBEL/Projects.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="25deAJxPYckPFcDLHi4qVwUKc7U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0838fccd-e14a-44f4-be19-ca7971206047" name="Changes" comment="" />
+      <created>1645861246077</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1645861246077</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
