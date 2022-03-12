@@ -388,12 +388,37 @@ void Calculator::Equal() {
     QString Temp;
     Temp = ui_lbl_Res->text();
     if (Temp.indexOf("=", 0) == -1) {
+
         if (Temp.indexOf("+", 0) != -1) {
             ui_lbl_Res->setText(ui_lbl_Res->text() + ui_le_in->text() + "=");
             Second_Number = ui_le_in->text();
             LLFNumber = First_Number.toDouble();
             LLSNumber = Second_Number.toDouble();
             Result = LLFNumber + LLSNumber;
+            ui_le_in->setText(QString::number(Result));
+            EqualDo = true;
+        }
+        else if (Temp.indexOf("/", 0) != -1) {
+            ui_lbl_Res->setText(ui_lbl_Res->text() + ui_le_in->text() + "=");
+            Second_Number = ui_le_in->text();
+            qDebug() << Second_Number;
+            LLFNumber = First_Number.toDouble();
+            LLSNumber = Second_Number.toDouble();
+            if (LLSNumber == 0) {
+                ui_le_in->setText("Error");
+            } else {
+                Result = LLFNumber / LLSNumber;
+                ui_le_in->setText(QString::number(Result));
+            }
+            EqualDo = true;
+        }
+        else if (Temp.indexOf("×", 0) != -1) {
+            ui_lbl_Res->setText(ui_lbl_Res->text() + ui_le_in->text() + "=");
+            Second_Number = ui_le_in->text();\
+            qDebug() << Second_Number;
+            LLFNumber = First_Number.toDouble();
+            LLSNumber = Second_Number.toDouble();
+            Result = LLFNumber * LLSNumber;
             ui_le_in->setText(QString::number(Result));
             EqualDo = true;
         }
@@ -414,30 +439,6 @@ void Calculator::Equal() {
             LLSNumber = Second_Number.toDouble();
             Result = LLFNumber + LLSNumber;
             ui_le_in->setText(QString::number(Result));
-            EqualDo = true;
-        }
-        else if (Temp.indexOf("×", 0) != -1) {
-            ui_lbl_Res->setText(ui_lbl_Res->text() + ui_le_in->text() + "=");
-            Second_Number = ui_le_in->text();\
-            qDebug() << Second_Number;
-            LLFNumber = First_Number.toDouble();
-            LLSNumber = Second_Number.toDouble();
-            Result = LLFNumber * LLSNumber;
-            ui_le_in->setText(QString::number(Result));
-            EqualDo = true;
-        }
-        else if (Temp.indexOf("/", 0) != -1) {
-            ui_lbl_Res->setText(ui_lbl_Res->text() + ui_le_in->text() + "=");
-            Second_Number = ui_le_in->text();
-            qDebug() << Second_Number;
-            LLFNumber = First_Number.toDouble();
-            LLSNumber = Second_Number.toDouble();
-            if (LLSNumber == 0) {
-                ui_le_in->setText("Error");
-            } else {
-                Result = LLFNumber / LLSNumber;
-                ui_le_in->setText(QString::number(Result));
-            }
             EqualDo = true;
         }
     }
