@@ -1,0 +1,3 @@
+C:/Users/kiril/Projects/lab23/cmake-build-debug/CMakeFiles/lab23.dir
+C:/Users/kiril/Projects/lab23/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kiril/Projects/lab23/cmake-build-debug/CMakeFiles/rebuild_cache.dir
