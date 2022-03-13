@@ -18,4 +18,5 @@ node *findParent (node *f, node *p);
 void removeNode(node*n, node *f);
 void Leaf(node *n, int * count);
 int Leafs(node *n);
+void printSonNode (node* n, int key);
 #endif

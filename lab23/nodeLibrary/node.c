@@ -14,8 +14,10 @@ void freeNode(node * n) {
         }
     }
     free(n->sons);
+    n->sons = NULL;
     printf("free node with key %d\n", n->key);
     free(n);
+    n = NULL;
 }
 void printParent (node *n, int deep) {
     if (deep != 0) {
@@ -78,10 +80,12 @@ void addNode(node * n, int parentKey, int x) {
 node *findParent (node *f, node *p) {
     if (f->count>0) {
         for (int i = 0; i < f->count; ++i) {
-            if (f->sons[i]->key == p->key) return f;
+            if (f->sons[i]->key == p->key)
+                return f;
             else {
                 node * s = findParent(f->sons[i], p);
-                if (s != NULL) return s;
+                if (s != NULL)
+                    return s;
             }
         }
         return NULL;
@@ -93,12 +97,13 @@ void removeNode(node*n, node *f) {
     node * p = findParent(n, f);
     int del = 0;
     for (int i = 0; i < p->count; ++i)
-        if (p->sons[i] = f) {
+        if (p->sons[i]->key == f->key) {
             del = i;
+            break;
         }
     freeNode(f);
     for (int i = del; i < p->count-1; ++i)
-        p[i] = p[i + 1];
+        p->sons[i] = p->sons[i + 1];
     p->count--;
 }
 void Leaf(node *n, int * count) {
@@ -115,4 +120,7 @@ int Leafs(node *n) {
     int count = 0;
     Leaf(n, &count);
     return count;
+}
+void printSonNode (node* n, int key) {
+    printNode(findNode(n, key));
 }
