@@ -24,6 +24,35 @@ CMAKE_AR:FILEPATH=C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/ar.exe
 // MinSizeRel ...
 CMAKE_BUILD_TYPE:STRING=Debug
 
+//CXX compiler
+CMAKE_CXX_COMPILER:FILEPATH=C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/g++.exe
+
+//A wrapper around 'ar' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_CXX_COMPILER_AR:FILEPATH=C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/gcc-ar.exe
+
+//A wrapper around 'ranlib' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/gcc-ranlib.exe
+
+//Flags used by the CXX compiler during all build types.
+CMAKE_CXX_FLAGS:STRING=
+
+//Flags used by the CXX compiler during DEBUG builds.
+CMAKE_CXX_FLAGS_DEBUG:STRING=-g
+
+//Flags used by the CXX compiler during MINSIZEREL builds.
+CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+
+//Flags used by the CXX compiler during RELEASE builds.
+CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+
+//Flags used by the CXX compiler during RELWITHDEBINFO builds.
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+
+//Libraries linked by default with all C++ applications.
+CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+
 //C compiler
 CMAKE_C_COMPILER:FILEPATH=C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/gcc.exe
 
@@ -205,6 +234,24 @@ CMAKE_STRIP:FILEPATH=C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/str
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+MainBuild_BINARY_DIR:STATIC=C:/Users/kiril/Projects/lab23/cmake-build-debug/build
+
+//Value Computed by CMake
+MainBuild_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+MainBuild_SOURCE_DIR:STATIC=C:/Users/kiril/Projects/lab23/build
+
+//Value Computed by CMake
+Project_BINARY_DIR:STATIC=C:/Users/kiril/Projects/lab23/cmake-build-debug
+
+//Value Computed by CMake
+Project_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Project_SOURCE_DIR:STATIC=C:/Users/kiril/Projects/lab23
+
+//Value Computed by CMake
 lab23_BINARY_DIR:STATIC=C:/Users/kiril/Projects/lab23/cmake-build-debug
 
 //Value Computed by CMake
@@ -212,6 +259,15 @@ lab23_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 lab23_SOURCE_DIR:STATIC=C:/Users/kiril/Projects/lab23
+
+//Value Computed by CMake
+nodeLibrary_BINARY_DIR:STATIC=C:/Users/kiril/Projects/lab23/cmake-build-debug/nodeLibrary
+
+//Value Computed by CMake
+nodeLibrary_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+nodeLibrary_SOURCE_DIR:STATIC=C:/Users/kiril/Projects/lab23/nodeLibrary
 
 
 ########################
@@ -236,6 +292,24 @@ CMAKE_COMMAND:INTERNAL=C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/b
 CMAKE_CPACK_COMMAND:INTERNAL=C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/bin/cpack.exe
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/bin/ctest.exe
+//ADVANCED property for variable: CMAKE_CXX_COMPILER
+CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_COMPILER_AR
+CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_COMPILER_RANLIB
+CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS
+CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG
+CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_MINSIZEREL
+CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_RELEASE
+CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
+CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_CXX_STANDARD_LIBRARIES
+CMAKE_CXX_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER
 CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_AR
@@ -298,7 +372,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

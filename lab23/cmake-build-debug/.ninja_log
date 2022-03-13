@@ -1,13 +1,10 @@
 # ninja log v5
-85	167	6688274402234704	lab23.exe	b2f4ece5b0bb065c
-1	84	6688274401429155	CMakeFiles/lab23.dir/main.c.obj	768564aabf7327e4
-1	91	6688279173641873	CMakeFiles/lab23.dir/main.c.obj	768564aabf7327e4
-1	71	6688279282230941	CMakeFiles/lab23.dir/main.c.obj	768564aabf7327e4
-9	84	6688279282363289	CMakeFiles/lab23.dir/node.c.obj	19b1add8fe805df4
-85	179	6688279283293204	lab23.exe	eef1c886cb192c71
-1	75	6688279459199866	CMakeFiles/lab23.dir/node.c.obj	19b1add8fe805df4
-75	160	6688279460036891	lab23.exe	eef1c886cb192c71
-2	92	6688282429009101	CMakeFiles/lab23.dir/main.c.obj	768564aabf7327e4
-92	205	6688282430092128	lab23.exe	eef1c886cb192c71
+1	56	6688307398944082	CMakeFiles/lab23.dir/main.c.obj	52e0adc86ada0980
 1	74	6688283059808761	CMakeFiles/lab23.dir/node.c.obj	19b1add8fe805df4
-74	164	6688283060691453	lab23.exe	eef1c886cb192c71
+0	184	6688581865608536	build.ninja	ee8eabeb0b9df7f3
+0	193	6688581971921201	nodeLibrary/CMakeFiles/nodeLibrary.dir/node.c.obj	e3de8ba114ccca5a
+194	339	6688581973396265	nodeLibrary/libnodeLibrary.a	d204fc5990336fa
+1	90	6688581977378218	build/CMakeFiles/MainBuild.dir/main.c.obj	561e4cd1844d76fa
+90	218	6688581978616543	build/MainBuild.exe	7be910bc3eebd24e
+3	79	6688583318057520	build/CMakeFiles/MainBuild.dir/main.c.obj	561e4cd1844d76fa
+80	174	6688583318985316	build/MainBuild.exe	7be910bc3eebd24e

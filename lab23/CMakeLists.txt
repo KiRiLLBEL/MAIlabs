@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.21)
-project(lab23 C)
+cmake_minimum_required (VERSION 3.8)
 
-set(CMAKE_C_STANDARD 99)
+project (lab23)
 
-add_executable(lab23 main.c node.c node.h)
+add_subdirectory (build)
+add_subdirectory (nodeLibrary)
