@@ -4,3 +4,4 @@ project (lab23)
 
 add_subdirectory (build)
 add_subdirectory (nodeLibrary)
+add_subdirectory (nodeBinLibrary)

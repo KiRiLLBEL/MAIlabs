@@ -5,5 +5,6 @@ set(CMAKE_C_STANDARD 99)
 
 add_executable(MainBuild main.c)
 include_directories("C:/Users/kiril/Projects/lab23/nodeLibrary")
-target_link_libraries(MainBuild nodeLibrary)
+include_directories("C:/Users/kiril/Projects/lab23/nodeBinLibrary")
+target_link_libraries(MainBuild nodeLibrary nodeBinLibrary)
 

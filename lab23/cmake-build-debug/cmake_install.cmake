@@ -41,6 +41,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/kiril/Projects/lab23/cmake-build-debug/build/cmake_install.cmake")
   include("C:/Users/kiril/Projects/lab23/cmake-build-debug/nodeLibrary/cmake_install.cmake")
+  include("C:/Users/kiril/Projects/lab23/cmake-build-debug/nodeBinLibrary/cmake_install.cmake")
 
 endif()
 

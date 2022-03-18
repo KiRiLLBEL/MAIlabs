@@ -113,7 +113,7 @@ CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/lab23
 CMAKE_LINKER:FILEPATH=C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/ld.exe
 
 //make program
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/Program Files/JetBrains/CLion 2021.3.3/bin/ninja/win/ninja.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/JetBrains/CLion 2021.3.3/bin/ninja/win/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -261,6 +261,15 @@ lab23_IS_TOP_LEVEL:STATIC=ON
 lab23_SOURCE_DIR:STATIC=C:/Users/kiril/Projects/lab23
 
 //Value Computed by CMake
+nodeBinLibrary_BINARY_DIR:STATIC=C:/Users/kiril/Projects/lab23/cmake-build-debug/nodeBinLibrary
+
+//Value Computed by CMake
+nodeBinLibrary_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+nodeBinLibrary_SOURCE_DIR:STATIC=C:/Users/kiril/Projects/lab23/nodeBinLibrary
+
+//Value Computed by CMake
 nodeLibrary_BINARY_DIR:STATIC=C:/Users/kiril/Projects/lab23/cmake-build-debug/nodeLibrary
 
 //Value Computed by CMake
@@ -372,7 +381,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

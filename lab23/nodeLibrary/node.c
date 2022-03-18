@@ -21,7 +21,7 @@ void freeNode(node * n) {
 }
 void printParent (node *n, int deep) {
     if (deep != 0) {
-        printf("-%d", n->key);
+        printf("=%d", n->key);
     }
     else {
         printf("%d", n->key);
@@ -60,21 +60,26 @@ node * findNode (node *n, int key) {
     }
 }
 void addNode(node * n, int parentKey, int x) {
-    node *f = findNode(n, parentKey);
-    if (f != NULL) {
-        if (f->count > 0) {
-            f->sons = (node **)realloc(f->sons, sizeof(node *) * (f->count + 1));
-            f->sons[f->count] = makeNode(x);
-            f->count++;
-        }
-        else if (f->count == 0) {
-            f->sons = (node **)malloc(sizeof(node *));
-            f->sons[0] = makeNode(x);
-            f->count = 1;
-        }
+    if (findNode(n, x)) {
+        printf("Error, element already created\n");
     }
     else {
-        printf("Error, parent not founded");
+        node *f = findNode(n, parentKey);
+        if (f != NULL) {
+            if (f->count > 0) {
+                f->sons = (node **)realloc(f->sons, sizeof(node *) * (f->count + 1));
+                f->sons[f->count] = makeNode(x);
+                f->count++;
+            }
+            else if (f->count == 0) {
+                f->sons = (node **)malloc(sizeof(node *));
+                f->sons[0] = makeNode(x);
+                f->count = 1;
+            }
+        }
+        else {
+            printf("Error, parent not founded\n");
+        }
     }
 }
 node *findParent (node *f, node *p) {
@@ -94,17 +99,22 @@ node *findParent (node *f, node *p) {
         return NULL;
 }
 void removeNode(node*n, node *f) {
-    node * p = findParent(n, f);
-    int del = 0;
-    for (int i = 0; i < p->count; ++i)
-        if (p->sons[i]->key == f->key) {
-            del = i;
-            break;
-        }
-    freeNode(f);
-    for (int i = del; i < p->count-1; ++i)
-        p->sons[i] = p->sons[i + 1];
-    p->count--;
+    if(findNode(n,f->key) == NULL) {
+        printf("Error, tree haven't this element");
+    }
+    else{
+        node * p = findParent(n, f);
+        int del = 0;
+        for (int i = 0; i < p->count; ++i)
+            if (p->sons[i]->key == f->key) {
+                del = i;
+                break;
+            }
+        freeNode(f);
+        for (int i = del; i < p->count-1; ++i)
+            p->sons[i] = p->sons[i + 1];
+        p->count--;
+    }
 }
 void Leaf(node *n, int * count) {
     for (int i = 0; i < n->count; ++i) {
