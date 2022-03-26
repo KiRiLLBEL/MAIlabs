@@ -141,7 +141,7 @@ void leafBin(nodeBin *n, int * count) {
         leafBin(n->left, count);
     }
     if (n->right) {
-        leafBin(n->left, count);
+        leafBin(n->right, count);
     }
     if (n->left == NULL && n->right == NULL) {
         ++*count;

@@ -89,6 +89,7 @@ int main() {
                                     freeNodeBin(nb);
                                     nb = NULL;
                                     TreeCreated = false;
+                                    BinTreeCreated = false;
                                 }
                                 else{
                                     nb = removeNodeBin(nb, x);

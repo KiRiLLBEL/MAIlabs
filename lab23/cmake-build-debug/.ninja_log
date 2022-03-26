@@ -66,3 +66,12 @@
 83	176	6695952515129654	build/MainBuild.exe	65ff7bf59d986635
 2	86	6695953475450610	build/CMakeFiles/MainBuild.dir/main.c.obj	f83ef72d0dedbce4
 86	185	6695953476388931	build/MainBuild.exe	65ff7bf59d986635
+2	133	6697341643902419	build/CMakeFiles/MainBuild.dir/main.c.obj	f83ef72d0dedbce4
+133	271	6697341645244525	build/MainBuild.exe	65ff7bf59d986635
+2	106	6697344201523823	build/CMakeFiles/MainBuild.dir/main.c.obj	f83ef72d0dedbce4
+107	399	6697344204309014	build/MainBuild.exe	65ff7bf59d986635
+3	96	6697344641160933	build/CMakeFiles/MainBuild.dir/main.c.obj	f83ef72d0dedbce4
+97	210	6697344642254622	build/MainBuild.exe	65ff7bf59d986635
+2	464	6699929154462475	nodeBinLibrary/CMakeFiles/nodeBinLibrary.dir/nodeBin.c.obj	69215e8d3bc53ade
+465	633	6699929156181036	nodeBinLibrary/libnodeBinLibrary.a	18fb8be6dbaa31ec
+634	748	6699929157274672	build/MainBuild.exe	65ff7bf59d986635
