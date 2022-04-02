@@ -1,0 +1,159 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "build",
+					"jsonFile" : "directory-build-Debug-9d985e5723e3b7e01b1f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "nodeLibrary",
+					"jsonFile" : "directory-nodeLibrary-Debug-ec93b79a76d6c87bb352.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "nodeLibrary",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "nodeBinLibrary",
+					"jsonFile" : "directory-nodeBinLibrary-Debug-d10d8b92aff8a626a11a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "nodeBinLibrary",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "lab23"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "MainBuild",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nodeLibrary",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "nodeBinLibrary",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "MainBuild::@039278ea0a093c55e3e1",
+					"jsonFile" : "target-MainBuild-Debug-55b117f995e5066ff49b.json",
+					"name" : "MainBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "nodeBinLibrary::@bc7aac3f6274c56201bd",
+					"jsonFile" : "target-nodeBinLibrary-Debug-bc491cf75d56b336539d.json",
+					"name" : "nodeBinLibrary",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "nodeLibrary::@d59fb2333cef0d0aa814",
+					"jsonFile" : "target-nodeLibrary-Debug-44623ba1286fd18732fd.json",
+					"name" : "nodeLibrary",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/kiril/Projects/lab23/cmake-build-debug",
+		"source" : "C:/Users/kiril/Projects/lab23"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
