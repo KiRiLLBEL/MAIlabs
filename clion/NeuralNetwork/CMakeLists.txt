@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+=======
+cmake_minimum_required(VERSION 3.21)
+project(NeuralNetwork)
+set(CMAKE_CXX_STANDARD 23)
+set(SOURCE_EXE main.cpp)
+set(SOURCE_LIB NeuralNetwork.cpp MnistReader.cpp)
+add_library(NeuralSystem STATIC ${SOURCE_LIB})
+add_executable(NeuralNetwork ${SOURCE_EXE})
+target_link_libraries(NeuralNetwork NeuralSystem)
+>>>>>>> cc4801cdb4c610d769156aa2c24590a4d672fc07

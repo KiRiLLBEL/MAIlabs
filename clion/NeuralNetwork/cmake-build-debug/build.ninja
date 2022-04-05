@@ -41,13 +41,50 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/kiril/Projects/clion/NeuralNetwork/cmake-build-debug/
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target NeuralSystem
+
+
+#############################################
+# Order-only phony target for NeuralSystem
+
+build cmake_object_order_depends_target_NeuralSystem: phony || CMakeFiles/NeuralSystem.dir
+
+build CMakeFiles/NeuralSystem.dir/NeuralNetwork.cpp.obj: CXX_COMPILER__NeuralSystem_Debug C$:/Users/kiril/Projects/clion/NeuralNetwork/NeuralNetwork.cpp || cmake_object_order_depends_target_NeuralSystem
+  DEP_FILE = CMakeFiles\NeuralSystem.dir\NeuralNetwork.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\NeuralSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\NeuralSystem.dir
+
+build CMakeFiles/NeuralSystem.dir/MnistReader.cpp.obj: CXX_COMPILER__NeuralSystem_Debug C$:/Users/kiril/Projects/clion/NeuralNetwork/MnistReader.cpp || cmake_object_order_depends_target_NeuralSystem
+  DEP_FILE = CMakeFiles\NeuralSystem.dir\MnistReader.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\NeuralSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\NeuralSystem.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target NeuralSystem
+
+
+#############################################
+# Link the static library libNeuralSystem.a
+
+build libNeuralSystem.a: CXX_STATIC_LIBRARY_LINKER__NeuralSystem_Debug CMakeFiles/NeuralSystem.dir/NeuralNetwork.cpp.obj CMakeFiles/NeuralSystem.dir/MnistReader.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\NeuralSystem.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libNeuralSystem.a
+  TARGET_PDB = NeuralSystem.a.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target NeuralNetwork
 
 
 #############################################
 # Order-only phony target for NeuralNetwork
 
-build cmake_object_order_depends_target_NeuralNetwork: phony || CMakeFiles/NeuralNetwork.dir
+build cmake_object_order_depends_target_NeuralNetwork: phony || cmake_object_order_depends_target_NeuralSystem
 
 build CMakeFiles/NeuralNetwork.dir/main.cpp.obj: CXX_COMPILER__NeuralNetwork_Debug C$:/Users/kiril/Projects/clion/NeuralNetwork/main.cpp || cmake_object_order_depends_target_NeuralNetwork
   DEP_FILE = CMakeFiles\NeuralNetwork.dir\main.cpp.obj.d
@@ -63,9 +100,9 @@ build CMakeFiles/NeuralNetwork.dir/main.cpp.obj: CXX_COMPILER__NeuralNetwork_Deb
 #############################################
 # Link the executable NeuralNetwork.exe
 
-build NeuralNetwork.exe: CXX_EXECUTABLE_LINKER__NeuralNetwork_Debug CMakeFiles/NeuralNetwork.dir/main.cpp.obj
+build NeuralNetwork.exe: CXX_EXECUTABLE_LINKER__NeuralNetwork_Debug CMakeFiles/NeuralNetwork.dir/main.cpp.obj | libNeuralSystem.a || libNeuralSystem.a
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = libNeuralSystem.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\NeuralNetwork.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -101,6 +138,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build NeuralNetwork: phony NeuralNetwork.exe
 
+build NeuralSystem: phony libNeuralSystem.a
+
 # =============================================================================
 # Folder targets.
 
@@ -109,7 +148,7 @@ build NeuralNetwork: phony NeuralNetwork.exe
 #############################################
 # Folder: C:/Users/kiril/Projects/clion/NeuralNetwork/cmake-build-debug
 
-build all: phony NeuralNetwork.exe
+build all: phony libNeuralSystem.a NeuralNetwork.exe
 
 # =============================================================================
 # Built-in targets

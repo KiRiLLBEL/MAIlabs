@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "NeuralNetwork",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,8 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "NeuralNetwork::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-NeuralNetwork-Debug-cce8ca2b8f63104a8853.json",
+					"jsonFile" : "target-NeuralNetwork-Debug-3ac1324f3f4c42044bf8.json",
 					"name" : "NeuralNetwork",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NeuralSystem::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NeuralSystem-Debug-7131b00f3a8be1db8329.json",
+					"name" : "NeuralSystem",
 					"projectIndex" : 0
 				}
 			]
