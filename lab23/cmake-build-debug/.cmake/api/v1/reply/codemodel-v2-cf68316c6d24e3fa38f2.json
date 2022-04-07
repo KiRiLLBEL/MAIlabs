@@ -12,7 +12,7 @@
 						2,
 						3
 					],
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.8"
@@ -22,7 +22,7 @@
 				},
 				{
 					"build" : "build",
-					"jsonFile" : "directory-build-Debug-9d985e5723e3b7e01b1f.json",
+					"jsonFile" : "directory-build-Debug-6a5209793cfabe8bedec.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.21"
@@ -37,7 +37,7 @@
 				},
 				{
 					"build" : "nodeLibrary",
-					"jsonFile" : "directory-nodeLibrary-Debug-ec93b79a76d6c87bb352.json",
+					"jsonFile" : "directory-nodeLibrary-Debug-b52b6196026dd28e5fb6.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.8"
@@ -52,7 +52,7 @@
 				},
 				{
 					"build" : "nodeBinLibrary",
-					"jsonFile" : "directory-nodeBinLibrary-Debug-d10d8b92aff8a626a11a.json",
+					"jsonFile" : "directory-nodeBinLibrary-Debug-b47e87524f2d029926d4.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.8"
@@ -124,21 +124,21 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "MainBuild::@039278ea0a093c55e3e1",
-					"jsonFile" : "target-MainBuild-Debug-55b117f995e5066ff49b.json",
+					"jsonFile" : "target-MainBuild-Debug-5048b45209bd945f2694.json",
 					"name" : "MainBuild",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "nodeBinLibrary::@bc7aac3f6274c56201bd",
-					"jsonFile" : "target-nodeBinLibrary-Debug-bc491cf75d56b336539d.json",
+					"jsonFile" : "target-nodeBinLibrary-Debug-8b01f768bfc72ce2f3de.json",
 					"name" : "nodeBinLibrary",
 					"projectIndex" : 3
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "nodeLibrary::@d59fb2333cef0d0aa814",
-					"jsonFile" : "target-nodeLibrary-Debug-44623ba1286fd18732fd.json",
+					"jsonFile" : "target-nodeLibrary-Debug-d3fd9a47b26f5a16f1cf.json",
 					"name" : "nodeLibrary",
 					"projectIndex" : 2
 				}
@@ -148,8 +148,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/kiril/Projects/lab23/cmake-build-debug",
-		"source" : "C:/Users/kiril/Projects/lab23"
+		"build" : "/home/kirill/Projects/lab23/cmake-build-debug",
+		"source" : "/home/kirill/Projects/lab23"
 	},
 	"version" : 
 	{

@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "build/MainBuild.exe"
-		},
-		{
-			"path" : "build/MainBuild.pdb"
+			"path" : "build/MainBuild"
 		}
 	],
 	"backtrace" : 1,
@@ -68,11 +65,11 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/kiril/Projects/lab23/nodeLibrary"
+					"path" : "/home/kirill/Projects/lab23/build/C:/Users/kiril/Projects/lab23/nodeLibrary"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/kiril/Projects/lab23/nodeBinLibrary"
+					"path" : "/home/kirill/Projects/lab23/build/C:/Users/kiril/Projects/lab23/nodeBinLibrary"
 				}
 			],
 			"language" : "C",
@@ -116,23 +113,19 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "nodeLibrary\\libnodeLibrary.a",
+				"fragment" : "../nodeLibrary/libnodeLibrary.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "nodeBinLibrary\\libnodeBinLibrary.a",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"fragment" : "../nodeBinLibrary/libnodeBinLibrary.a",
 				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
 	"name" : "MainBuild",
-	"nameOnDisk" : "MainBuild.exe",
+	"nameOnDisk" : "MainBuild",
 	"paths" : 
 	{
 		"build" : "build",
