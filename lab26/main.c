@@ -9,8 +9,9 @@ int main() {
     PushStack(a, 1);
     PushStack(a, 9);
     PushStack(a, 7);
-    a = MergeSortStack(a, 0, 6);
-    for (int i = 0; i != 6; ++i) {
+    a = MergeSortStack(a, 0, SizeStack(a));
+    int size = SizeStack(a);
+    for (int i = 0; i != size; ++i) {
         printf("%d ", TopStack(a));
         PopStack(a);
     }

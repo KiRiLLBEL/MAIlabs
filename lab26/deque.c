@@ -77,7 +77,7 @@ int BackDeque(deque * d) {
 }
 void DestroyDeque(deque * d) {
     while (d->front != d->back) {
-        struct ItemStack * i = d->front;
+        struct ItemDeque * i = d->front;
         d->front = d->front->next;
         d->front->prev = 0;
         free(i);
