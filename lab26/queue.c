@@ -37,8 +37,7 @@ bool PopQueue(queue * q) {
     return true;
 }
 int TopQueue(queue * q) {
-    if (q->first != q->last)
-        return q->first->data;
+    return q->first->data;
 }
 void DestroyQueue(queue * q) {
     while (q->first != q->last) {

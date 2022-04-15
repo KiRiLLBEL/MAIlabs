@@ -39,24 +39,180 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/kirill/Projects/KP6/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/kiril/Projects/KP6/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target count
+
+
+#############################################
+# Order-only phony target for count
+
+build cmake_object_order_depends_target_count: phony || CMakeFiles/count.dir
+
+build CMakeFiles/count.dir/count.c.obj: C_COMPILER__count_Debug C$:/Users/kiril/Projects/KP6/count.c || cmake_object_order_depends_target_count
+  DEP_FILE = CMakeFiles\count.dir\count.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\count.dir
+  OBJECT_FILE_DIR = CMakeFiles\count.dir
+
+build CMakeFiles/count.dir/table.c.obj: C_COMPILER__count_Debug C$:/Users/kiril/Projects/KP6/table.c || cmake_object_order_depends_target_count
+  DEP_FILE = CMakeFiles\count.dir\table.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\count.dir
+  OBJECT_FILE_DIR = CMakeFiles\count.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target count
+
+
+#############################################
+# Link the executable count.exe
+
+build count.exe: C_EXECUTABLE_LINKER__count_Debug CMakeFiles/count.dir/count.c.obj CMakeFiles/count.dir/table.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\count.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = count.exe
+  TARGET_IMPLIB = libcount.dll.a
+  TARGET_PDB = count.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kirill/Projects/KP6/cmake-build-debug && /snap/clion/184/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D C:\Users\kiril\Projects\KP6\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
 build edit_cache: phony CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target print
+
+
+#############################################
+# Order-only phony target for print
+
+build cmake_object_order_depends_target_print: phony || CMakeFiles/print.dir
+
+build CMakeFiles/print.dir/print.c.obj: C_COMPILER__print_Debug C$:/Users/kiril/Projects/KP6/print.c || cmake_object_order_depends_target_print
+  DEP_FILE = CMakeFiles\print.dir\print.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\print.dir
+  OBJECT_FILE_DIR = CMakeFiles\print.dir
+
+build CMakeFiles/print.dir/table.c.obj: C_COMPILER__print_Debug C$:/Users/kiril/Projects/KP6/table.c || cmake_object_order_depends_target_print
+  DEP_FILE = CMakeFiles\print.dir\table.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\print.dir
+  OBJECT_FILE_DIR = CMakeFiles\print.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target print
+
+
+#############################################
+# Link the executable print.exe
+
+build print.exe: C_EXECUTABLE_LINKER__print_Debug CMakeFiles/print.dir/print.c.obj CMakeFiles/print.dir/table.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\print.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = print.exe
+  TARGET_IMPLIB = libprint.dll.a
+  TARGET_PDB = print.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target generate
+
+
+#############################################
+# Order-only phony target for generate
+
+build cmake_object_order_depends_target_generate: phony || CMakeFiles/generate.dir
+
+build CMakeFiles/generate.dir/generate.c.obj: C_COMPILER__generate_Debug C$:/Users/kiril/Projects/KP6/generate.c || cmake_object_order_depends_target_generate
+  DEP_FILE = CMakeFiles\generate.dir\generate.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\generate.dir
+  OBJECT_FILE_DIR = CMakeFiles\generate.dir
+
+build CMakeFiles/generate.dir/table.c.obj: C_COMPILER__generate_Debug C$:/Users/kiril/Projects/KP6/table.c || cmake_object_order_depends_target_generate
+  DEP_FILE = CMakeFiles\generate.dir\table.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\generate.dir
+  OBJECT_FILE_DIR = CMakeFiles\generate.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target generate
+
+
+#############################################
+# Link the executable generate.exe
+
+build generate.exe: C_EXECUTABLE_LINKER__generate_Debug CMakeFiles/generate.dir/generate.c.obj CMakeFiles/generate.dir/table.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\generate.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = generate.exe
+  TARGET_IMPLIB = libgenerate.dll.a
+  TARGET_PDB = generate.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target input
+
+
+#############################################
+# Order-only phony target for input
+
+build cmake_object_order_depends_target_input: phony || CMakeFiles/input.dir
+
+build CMakeFiles/input.dir/input.c.obj: C_COMPILER__input_Debug C$:/Users/kiril/Projects/KP6/input.c || cmake_object_order_depends_target_input
+  DEP_FILE = CMakeFiles\input.dir\input.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\input.dir
+  OBJECT_FILE_DIR = CMakeFiles\input.dir
+
+build CMakeFiles/input.dir/table.c.obj: C_COMPILER__input_Debug C$:/Users/kiril/Projects/KP6/table.c || cmake_object_order_depends_target_input
+  DEP_FILE = CMakeFiles\input.dir\table.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\input.dir
+  OBJECT_FILE_DIR = CMakeFiles\input.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target input
+
+
+#############################################
+# Link the executable input.exe
+
+build input.exe: C_EXECUTABLE_LINKER__input_Debug CMakeFiles/input.dir/input.c.obj CMakeFiles/input.dir/table.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\input.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = input.exe
+  TARGET_IMPLIB = libinput.dll.a
+  TARGET_PDB = input.exe.dbg
 
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kirill/Projects/KP6/cmake-build-debug && /snap/clion/184/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/kirill/Projects/KP6 -B/home/kirill/Projects/KP6/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D C:\Users\kiril\Projects\KP6\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\kiril\Projects\KP6 -BC:\Users\kiril\Projects\KP6\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -64,78 +220,15 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
-# Object build statements for EXECUTABLE target KP6
-
-
-#############################################
-# Order-only phony target for KP6
-
-build cmake_object_order_depends_target_KP6: phony || CMakeFiles/KP6.dir
-
-build CMakeFiles/KP6.dir/count.c.o: C_COMPILER__KP6_Debug /home/kirill/Projects/KP6/count.c || cmake_object_order_depends_target_KP6
-  DEP_FILE = CMakeFiles/KP6.dir/count.c.o.d
-  FLAGS = -g -std=gnu11
-  INCLUDES = -I/home/kirill/Projects/KP6/.
-  OBJECT_DIR = CMakeFiles/KP6.dir
-  OBJECT_FILE_DIR = CMakeFiles/KP6.dir
-  TARGET_COMPILE_PDB = CMakeFiles/KP6.dir/
-  TARGET_PDB = KP6.pdb
-
-build CMakeFiles/KP6.dir/generate.c.o: C_COMPILER__KP6_Debug /home/kirill/Projects/KP6/generate.c || cmake_object_order_depends_target_KP6
-  DEP_FILE = CMakeFiles/KP6.dir/generate.c.o.d
-  FLAGS = -g -std=gnu11
-  INCLUDES = -I/home/kirill/Projects/KP6/.
-  OBJECT_DIR = CMakeFiles/KP6.dir
-  OBJECT_FILE_DIR = CMakeFiles/KP6.dir
-  TARGET_COMPILE_PDB = CMakeFiles/KP6.dir/
-  TARGET_PDB = KP6.pdb
-
-build CMakeFiles/KP6.dir/input.c.o: C_COMPILER__KP6_Debug /home/kirill/Projects/KP6/input.c || cmake_object_order_depends_target_KP6
-  DEP_FILE = CMakeFiles/KP6.dir/input.c.o.d
-  FLAGS = -g -std=gnu11
-  INCLUDES = -I/home/kirill/Projects/KP6/.
-  OBJECT_DIR = CMakeFiles/KP6.dir
-  OBJECT_FILE_DIR = CMakeFiles/KP6.dir
-  TARGET_COMPILE_PDB = CMakeFiles/KP6.dir/
-  TARGET_PDB = KP6.pdb
-
-build CMakeFiles/KP6.dir/print.c.o: C_COMPILER__KP6_Debug /home/kirill/Projects/KP6/print.c || cmake_object_order_depends_target_KP6
-  DEP_FILE = CMakeFiles/KP6.dir/print.c.o.d
-  FLAGS = -g -std=gnu11
-  INCLUDES = -I/home/kirill/Projects/KP6/.
-  OBJECT_DIR = CMakeFiles/KP6.dir
-  OBJECT_FILE_DIR = CMakeFiles/KP6.dir
-  TARGET_COMPILE_PDB = CMakeFiles/KP6.dir/
-  TARGET_PDB = KP6.pdb
-
-build CMakeFiles/KP6.dir/table.c.o: C_COMPILER__KP6_Debug /home/kirill/Projects/KP6/table.c || cmake_object_order_depends_target_KP6
-  DEP_FILE = CMakeFiles/KP6.dir/table.c.o.d
-  FLAGS = -g -std=gnu11
-  INCLUDES = -I/home/kirill/Projects/KP6/.
-  OBJECT_DIR = CMakeFiles/KP6.dir
-  OBJECT_FILE_DIR = CMakeFiles/KP6.dir
-  TARGET_COMPILE_PDB = CMakeFiles/KP6.dir/
-  TARGET_PDB = KP6.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target KP6
-
-
-#############################################
-# Link the executable KP6
-
-build KP6: C_EXECUTABLE_LINKER__KP6_Debug CMakeFiles/KP6.dir/count.c.o CMakeFiles/KP6.dir/generate.c.o CMakeFiles/KP6.dir/input.c.o CMakeFiles/KP6.dir/print.c.o CMakeFiles/KP6.dir/table.c.o
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles/KP6.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/KP6.dir/
-  TARGET_FILE = KP6
-  TARGET_PDB = KP6.pdb
-
-# =============================================================================
 # Target aliases.
+
+build count: phony count.exe
+
+build generate: phony generate.exe
+
+build input: phony input.exe
+
+build print: phony print.exe
 
 # =============================================================================
 # Folder targets.
@@ -143,9 +236,9 @@ build KP6: C_EXECUTABLE_LINKER__KP6_Debug CMakeFiles/KP6.dir/count.c.o CMakeFile
 # =============================================================================
 
 #############################################
-# Folder: /home/kirill/Projects/KP6/cmake-build-debug
+# Folder: C:/Users/kiril/Projects/KP6/cmake-build-debug
 
-build all: phony KP6
+build all: phony count.exe print.exe generate.exe input.exe
 
 # =============================================================================
 # Built-in targets
@@ -154,14 +247,14 @@ build all: phony KP6
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompilerABI.c /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystem.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCCompilerABI.c /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystem.cmake.in /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake /snap/clion/184/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################

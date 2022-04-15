@@ -1,0 +1,10 @@
+# ninja log v5
+0	109	6711489954256732	CMakeFiles/count.dir/count.c.obj	64e6942b86252227
+15	112	6711489954296729	CMakeFiles/count.dir/table.c.obj	834b80d3fca7fc12
+112	234	6711489955487536	count.exe	1189ff1c79117747
+10	84	6711490080825848	CMakeFiles/generate.dir/table.c.obj	135eccbed7e345b
+0	88	6711490080865849	CMakeFiles/generate.dir/generate.c.obj	6742353ae2711c22
+88	189	6711490081865910	generate.exe	7cd63e3d6958a186
+0	77	6711490252216804	CMakeFiles/print.dir/table.c.obj	8dafca6f0f3d421d
+8	81	6711490252256804	CMakeFiles/print.dir/print.c.obj	de4e26941afd5ff5
+81	186	6711490253261175	print.exe	b598d682d1b25bd8
