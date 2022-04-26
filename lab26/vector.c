@@ -10,8 +10,7 @@ int SizeVector(Vector * v) {
     return v->size;
 }
 int LoadVector(Vector *v, int i) {
-    if((i >= 0) && (i < v->size))
-        return v->data[i];
+    return v->data[i];
 }
 void SaveVector(Vector *v, int i, int t) {
     if((i >= 0) && (i < v->size))

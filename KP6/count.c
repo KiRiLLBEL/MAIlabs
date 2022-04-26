@@ -5,7 +5,7 @@ int main(int argc, char * argv[]) {
     Person p;
     f = fopen("BD.bin", "rb");
     if (argc < 4) {
-        fprintf(stderr, "Error, input count of baggage and weight");
+        fprintf(stderr, "Error, input count of baggage and weight\n");
         exit(1);
     }
     int p1;

@@ -2,18 +2,18 @@
 #define CALCULATOR_H
 
 #include <QWidget>
-#include <QLayout>
 #include <QStack>
 #include <QLCDNumber>
 #include <QPushButton>
-class QPushButton;
+#include <QLayout>
+#include <QRegularExpression>
 
 class Calculator : public QWidget
 {
     Q_OBJECT
 private:
     QLCDNumber * m_plcd;
-    QStack<QString> m_stck;
+    QStack<QString> m_stk;
     QString m_strDisplay;
 public:
     Calculator(QWidget * pwgt = 0);

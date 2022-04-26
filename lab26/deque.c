@@ -68,12 +68,10 @@ bool PopFrontStack(deque * d) {
     return true;
 }
 int FrontDeque(deque * d) {
-    if(d->front)
-        return d->front->data;
+    return d->front->data;
 }
 int BackDeque(deque * d) {
-    if(d->back)
-        return d->back->data;
+    return d->back->data;
 }
 void DestroyDeque(deque * d) {
     while (d->front != d->back) {

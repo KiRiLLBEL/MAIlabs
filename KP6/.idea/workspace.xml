@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="KP6" targetName="count" />
+      <config projectName="KP6" targetName="input" />
+      <config projectName="KP6" targetName="print" />
+      <config projectName="KP6" targetName="generate" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="abc89a96-2013-4617-8d2f-c850e13d14ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/KP6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pythonProject/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BD.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-e0859a3f22e23dee10fe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-93b6ee37e5aadb94c0a8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-3015e3e7346fdbf79245.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-04-08T18-45-32-0080.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-KP6-Debug-9ce76a2431f2fb085962.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-1a22d9ad962073fe4f39.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/count" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/count.c" beforeDir="false" afterPath="$PROJECT_DIR$/count.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Python/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QT/LessonProjects/LessonProjects.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../QT/LessonProjects/LessonProjects.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QT/LessonProjects/calculator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../QT/LessonProjects/calculator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QT/LessonProjects/calculator.h" beforeDir="false" afterPath="$PROJECT_DIR$/../QT/LessonProjects/calculator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QT/LessonProjects/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../QT/LessonProjects/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QT/build-LessonProjects-Desktop_Qt_6_2_0_MinGW_64_bit-Debug-Xlint/Makefile.Debug" beforeDir="false" afterPath="$PROJECT_DIR$/../QT/build-LessonProjects-Desktop_Qt_6_2_0_MinGW_64_bit-Debug-Xlint/Makefile.Debug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QT/build-LessonProjects-Desktop_Qt_6_2_0_MinGW_64_bit-Debug-Xlint/Makefile.Release" beforeDir="false" afterPath="$PROJECT_DIR$/../QT/build-LessonProjects-Desktop_Qt_6_2_0_MinGW_64_bit-Debug-Xlint/Makefile.Release" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stepik/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stepik/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Stepik/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stepik/square.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stepik/square.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../clion/NeuralNetwork/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/index-2022-04-02T20-08-58-0428.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab21/catf.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../lab21/catf.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/.idea/lab26.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/.idea/lab26.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/deque.c" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/deque.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/queue.c" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/queue.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/stack.c" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/stack.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/vector.c" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/vector.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/.idea/untitled1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled1/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2021" />
+    <option name="minorVersion" value="3.4" />
+  </component>
+  <component name="ProjectId" id="27WpOKf9SZGiCh3XoYJBLbUQoC8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="CMake Application.print">
+    <configuration name="count" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-p 10 80" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="KP6" TARGET_NAME="count" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="KP6" RUN_TARGET_NAME="count">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generate" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="KP6" TARGET_NAME="generate" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="KP6" RUN_TARGET_NAME="generate">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="input" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="KP6" TARGET_NAME="input" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="KP6" RUN_TARGET_NAME="input">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="print" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="KP6" TARGET_NAME="print" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="KP6" RUN_TARGET_NAME="print">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.count" />
+      <item itemvalue="CMake Application.generate" />
+      <item itemvalue="CMake Application.input" />
+      <item itemvalue="CMake Application.print" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="abc89a96-2013-4617-8d2f-c850e13d14ab" name="Changes" comment="" />
+      <created>1649445662466</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649445662466</updated>
+      <workItem from="1649445664439" duration="316000" />
+      <workItem from="1649492601461" duration="1401000" />
+      <workItem from="1649843640009" duration="101000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

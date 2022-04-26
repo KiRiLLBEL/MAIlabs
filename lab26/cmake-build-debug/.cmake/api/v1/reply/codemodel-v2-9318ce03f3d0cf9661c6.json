@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.21"
@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "KP6",
+					"name" : "lab26",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "KP6::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-KP6-Debug-9ce76a2431f2fb085962.json",
-					"name" : "KP6",
+					"id" : "lab26::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lab26-Debug-2a6b9b31d5a148e64b72.json",
+					"name" : "lab26",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/kirill/Projects/KP6/cmake-build-debug",
-		"source" : "/home/kirill/Projects/KP6"
+		"build" : "C:/Users/kiril/Projects/lab26/cmake-build-debug",
+		"source" : "C:/Users/kiril/Projects/lab26"
 	},
 	"version" : 
 	{

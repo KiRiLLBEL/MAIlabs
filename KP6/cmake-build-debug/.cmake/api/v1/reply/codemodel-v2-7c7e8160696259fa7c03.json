@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "KP6",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "count::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-count-Debug-fb6c4dc1828aba002a0f.json",
+					"name" : "count",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate-Debug-d706c3283a4a9f401c65.json",
+					"name" : "generate",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "input::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-input-Debug-4926f6820501b4092edf.json",
+					"name" : "input",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "print::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-print-Debug-04aa87730f1af93d5e79.json",
+					"name" : "print",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/kiril/Projects/KP6/cmake-build-debug",
+		"source" : "C:/Users/kiril/Projects/KP6"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

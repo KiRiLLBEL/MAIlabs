@@ -2,81 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0838fccd-e14a-44f4-be19-ca7971206047" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/project-colors.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/v17/.suo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/v17/Browse.VC.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/v17/ipch/AutoPCH/1139637a6713fec7/MAIN.ipch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/.vs/QTTEST/v17/ipch/AutoPCH/f14694435b2a79f3/QTTEST.ipch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.qrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.vcxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.vcxproj.filters" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/QTTEST.vcxproj.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.exe.recipe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/CL.command.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/CL.read.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/CL.write.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/QTTEST.lastbuildstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/QTTEST.write.1u.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/link.command.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/link.read.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/link.write.1.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/moc.read.1u.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/moc.write.1u.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/rcc.read.1u.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/rcc.write.1u.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/uic.read.1u.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/QTTEST.tlog/uic.write.1u.tlog" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/main.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/moc/moc_QTTEST.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/moc_QTTEST.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/qtvars_x64_Debug.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/.qmake.stash" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/moc_predefs.h.cbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/props.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars.vcxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars.vcxproj.filters" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qmake/temp/qtvars_x64_Debug.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qrc_QTTEST.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/qt_work.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/rcc/qrc_QTTEST.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/uic/ui_QTTEST.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Debug/vc143.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/moc/moc_QTTEST.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/qtvars_x64_Release.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/.qmake.stash" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/6F4E0F90-FE89-4365-B067-85D0570055B5.QTTEST.designtime.idx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/moc_predefs.h.cbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/props.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars.vcxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars.vcxproj.filters" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qmake/temp/qtvars_x64_Release.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/qt_work.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/rcc/qrc_QTTEST.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/QTTEST/x64/Release/uic/ui_QTTEST.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/x64/Debug/QTTEST.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/x64/Debug/QTTEST.ilk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Visual studio/QTTEST/x64/Debug/QTTEST.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab21/Lab21Otchet.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lab21/Lab21Otchet.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../KP6/.idea/KP6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/cache-v2-e0859a3f22e23dee10fe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-93b6ee37e5aadb94c0a8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-3015e3e7346fdbf79245.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/index-2022-04-08T18-45-32-0080.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/target-KP6-Debug-9ce76a2431f2fb085962.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-1a22d9ad962073fe4f39.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../clion/NeuralNetwork/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/index-2022-04-02T20-08-58-0428.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/.idea/lab26.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/.idea/lab26.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab26/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab26/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -29,8 +29,7 @@ bool PopStack(stack * s) {
     return true;
 }
 int TopStack(stack * s) {
-    if(s->top)
-        return s->top->data;
+    return s->top->data;
 }
 void DestroyStack(stack * s) {
     while (s->top) {
