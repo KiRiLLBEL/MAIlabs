@@ -8,7 +8,7 @@
 #include "MnistReader.h"
 using namespace std;
 int main () {
-    vector<int> v = {758, 128, 10};
+    vector<int> v = {784, 128, 10};
     bool generate = true;
     cout << "generate new weight?" <<"\n";
     cin >> generate;
@@ -28,17 +28,21 @@ int main () {
     }
     unsigned char ** dataset;
     int x, y;
-    dataset = read_mnist_images("C:/Users/kiril/Projects/clion/imageTest/cmake-build-debug/train-images.idx3-ubyte", x, y);
+    dataset = read_mnist_images("C:/Users/kiril/Projects/ref2/NeuralNetwork/cmake-build-debug/train-images.idx3-ubyte", x, y);
     vector <vector <double>> input(x, vector<double> (y));
     for (int i = 0; i != x; ++i) {
         for (int j = 0; j != y; ++j) {
             input[i][j] = (double)(unsigned)dataset[i][j] / 255;
         }
     }
+    vector<vector<double>> test (1, vector<double> (784));
+    for (int j = 0; j != 784; ++j) {
+        test[0][j] = (double)(unsigned)dataset[15][j] / 255;
+    }
     delete [] dataset;
     unsigned char * data;
     int z;
-    data = read_mnist_labels("C:/Users/kiril/Projects/clion/NeuralTest/cmake-build-debug/train-labels.idx1-ubyte", z);
+    data = read_mnist_labels("C:/Users/kiril/Projects/ref2/NeuralNetwork/cmake-build-debug/train-labels.idx1-ubyte", z);
     vector<double> output (z);
     for (int i = 0; i != z; ++i) {
         output[i] = (unsigned)data[i];
@@ -76,7 +80,7 @@ int main () {
             ++i;
         }
     }
-    NS.NeuralSystemAnswer(input, "relu");
+    NS.NeuralSystemAnswer(test, "relu");
     return 0;
 
 }

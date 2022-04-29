@@ -58,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/kiril/Projects/clion/NeuralNetwork/cmake-build-debug",
-		"source" : "C:/Users/kiril/Projects/clion/NeuralNetwork"
+		"build" : "C:/Users/kiril/Projects/ref2/NeuralNetwork/cmake-build-debug",
+		"source" : "C:/Users/kiril/Projects/ref2/NeuralNetwork"
 	},
 	"version" : 
 	{

@@ -15,44 +15,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c62055a7-01e1-4231-9a1e-6e64cf7751f8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../KP6/.idea/KP6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TensorTest/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TensorTest/.idea/TensorTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TensorTest/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TensorTest/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TensorTest/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TensorTest/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TensorTest/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TensorTest/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pythonProject/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/BD.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/BD.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/cache-v2-e0859a3f22e23dee10fe.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-93b6ee37e5aadb94c0a8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-3015e3e7346fdbf79245.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/index-2022-04-08T18-45-32-0080.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/target-KP6-Debug-9ce76a2431f2fb085962.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-1a22d9ad962073fe4f39.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../KP6/count.c" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/count.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Python/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../clion/NeuralNetwork/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/index-2022-04-02T20-08-58-0428.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab21/catf.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../lab21/catf.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lab26.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lab26.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deque.c" beforeDir="false" afterPath="$PROJECT_DIR$/deque.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/.idea/NeuralNetwork.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/MnistReader.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/MnistReader.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/NeuralNetwork.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/NeuralNetwork.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/bitmap_image.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/cache-v2-e5e4021971f7d52e5002.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-805347514ae0978918b8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-16b79296568323d60fa4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/index-2022-04-08T19-28-31-0844.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/target-NeuralNetwork-Debug-3ac1324f3f4c42044bf8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/target-NeuralSystem-Debug-7131b00f3a8be1db8329.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-ad00878584a80bba1a36.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/NeuralNetwork.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/input.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/cmake-build-debug/libNeuralSystem.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/NeuralTest/cmake-build-debug/train-labels.idx1-ubyte" beforeDir="false" afterPath="$PROJECT_DIR$/../ref2/NeuralNetwork/cmake-build-debug/train-labels.idx1-ubyte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clion/imageTest/cmake-build-debug/train-images.idx3-ubyte" beforeDir="false" afterPath="$PROJECT_DIR$/../ref2/NeuralNetwork/cmake-build-debug/train-images.idx3-ubyte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab26.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab26.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/queue.c" beforeDir="false" afterPath="$PROJECT_DIR$/queue.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack.c" beforeDir="false" afterPath="$PROJECT_DIR$/stack.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector.c" beforeDir="false" afterPath="$PROJECT_DIR$/vector.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +118,7 @@
       <workItem from="1649446054537" duration="25000" />
       <workItem from="1649491670511" duration="5373000" />
       <workItem from="1649540341922" duration="14000" />
+      <workItem from="1650090804837" duration="8876000" />
     </task>
     <servers />
   </component>
@@ -126,8 +130,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>5</line>
-          <option name="timeStamp" value="1" />
+          <line>17</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

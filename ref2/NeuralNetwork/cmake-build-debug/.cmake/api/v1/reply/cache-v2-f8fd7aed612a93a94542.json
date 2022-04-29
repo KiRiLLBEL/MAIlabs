@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/kiril/Projects/clion/NeuralNetwork/cmake-build-debug"
+			"value" : "c:/Users/kiril/Projects/ref2/NeuralNetwork/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/kiril/Projects/clion/NeuralNetwork"
+			"value" : "C:/Users/kiril/Projects/ref2/NeuralNetwork"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1239,7 +1239,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/kiril/Projects/clion/NeuralNetwork/cmake-build-debug"
+			"value" : "C:/Users/kiril/Projects/ref2/NeuralNetwork/cmake-build-debug"
 		},
 		{
 			"name" : "NeuralNetwork_IS_TOP_LEVEL",
@@ -1263,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/kiril/Projects/clion/NeuralNetwork"
+			"value" : "C:/Users/kiril/Projects/ref2/NeuralNetwork"
 		}
 	],
 	"kind" : "cache",

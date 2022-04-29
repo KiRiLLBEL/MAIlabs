@@ -1,6 +1,0 @@
-# ninja log v5
-15	1544	6706333436074761	CMakeFiles/NeuralNetwork.dir/main.cpp.obj	ca5cca4f4ed9d613
-1732	1991	6706333440495916	NeuralNetwork.exe	877c0d296e64b58a
-2	1345	6706333434074932	CMakeFiles/NeuralSystem.dir/MnistReader.cpp.obj	73cf596566b67832
-13	1574	6706333436375581	CMakeFiles/NeuralSystem.dir/NeuralNetwork.cpp.obj	11b62423e85a006c
-1575	1732	6706333437959502	libNeuralSystem.a	2a95d5fec892d09
