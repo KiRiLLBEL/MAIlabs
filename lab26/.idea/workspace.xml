@@ -3,7 +3,7 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+  <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="lab26" targetName="lab26" />
     </generated>
@@ -15,6 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c62055a7-01e1-4231-9a1e-6e64cf7751f8" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../KP6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../clion/NeuralNetwork/.idea/NeuralNetwork.iml" beforeDir="false" />
@@ -56,6 +57,41 @@
       <change beforePath="$PROJECT_DIR$/main" beforeDir="false" afterPath="$PROJECT_DIR$/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../KP6/.idea/Projects.KP6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../KP7/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../KP7/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../KP7/matrix.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../KP7/matrix.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/.idea/KP6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/.idea/KP6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/cache-v2-5246ec7bce8418247330.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-d30ac1d859f43215e510.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-7c7e8160696259fa7c03.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/index-2022-04-08T19-23-08-0345.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/target-count-Debug-fb6c4dc1828aba002a0f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/target-generate-Debug-d706c3283a4a9f401c65.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/target-input-Debug-4926f6820501b4092edf.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/target-print-Debug-04aa87730f1af93d5e79.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-82b1473d9736ddcfdd8d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KP6/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../KP6/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-6c6134cb0d862b61c7ee.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-b73f6f3bb4de7224d401.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-9318ce03f3d0cf9661c6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-04-08T19-26-58-0478.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-lab26-Debug-2a6b9b31d5a148e64b72.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-82b1473d9736ddcfdd8d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+>>>>>>> a49dc9c0b5fccd598636a18b9a3e37972a45df4a
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,23 +119,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "cmake.loaded.for.project": "true"
+  }
+}]]></component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="lab26" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab26" TARGET_NAME="lab26" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab26" RUN_TARGET_NAME="lab26">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -118,7 +154,11 @@
       <workItem from="1649446054537" duration="25000" />
       <workItem from="1649491670511" duration="5373000" />
       <workItem from="1649540341922" duration="14000" />
+<<<<<<< HEAD
       <workItem from="1650090804837" duration="8876000" />
+=======
+      <workItem from="1651056223068" duration="123000" />
+>>>>>>> a49dc9c0b5fccd598636a18b9a3e37972a45df4a
     </task>
     <servers />
   </component>
