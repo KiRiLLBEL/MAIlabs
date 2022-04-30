@@ -20,7 +20,7 @@ int main() {
     while (programDo) {
         if (startBodyProgram) {
             printf("1. Do function\n2. Print\n3. Exit\n");
-            char input[] = "";
+            char input[2];
             int switcher = 0;
             while (switcher == 0) {
                 scanf("%s", input);
@@ -40,7 +40,7 @@ int main() {
             switch (switcher) {
                 case 1:
                     printf("Input number:\n");
-                    char number[] = "";
+                    char number[10];
                     int searchNumber;
                     bool isNumber = true;
                     while (isNumber) {
@@ -69,7 +69,7 @@ int main() {
         }
         if (programStart) {
             printf("1. Create matrix\n2. Exit\n");
-            char input[] = "";
+            char input[2];
             int switcher = 0;
             while (switcher == 0) {
                 scanf("%s", input);
@@ -94,7 +94,7 @@ int main() {
                     scanf("%d", &WEIGHT);
                     m = create_matrix(HEIGHT, WEIGHT);
                     printf("input address of input file:\n");
-                    char s[] = "";
+                    char s[128];
                     scanf("%s", s);
                     input_matrix(s, m);
                     print_matrix(m);
