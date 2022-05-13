@@ -76,7 +76,7 @@ void function_matrix(Matrix * m, double input) {
                 if (i >= m->CIP[j])
                     line = j;
             }
-            for (int j = m->CIP[line]; j != m->CIP[line] + m->weight; ++j) {
+            for (int j = m->CIP[line]; j != m->CIP[line + 1]; ++j) {
                 if (m->PI[j] != 0) {
                     if (m->YE[j] != minElem)
                         m->YE[j] /= minElem;

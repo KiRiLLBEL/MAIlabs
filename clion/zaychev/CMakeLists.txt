@@ -3,4 +3,4 @@ project(zaychev C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(zaychev main.c queue.c queue.h)
+add_executable(zaychev 23_tree.c 23_1.c)
