@@ -1,46 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "lexer.h"
-#include "tree.h"
+#include "parser.h"
 #include "transform.h"
-
-/*
- * Необходимые улучшения:
- *   сделать tokens вектором, а не массивом
- *   убрать вывод деревьев и вспомогательных сообщений
- *   перейти от однобуквенных имён переменных к многобуквенным
- *   обработать экзотические требования к обработке унарного минуса
-*/
+#include "printer.h"
 
 int main(void)
 {
-    Token tokens[256];
-    size_t tokens_qty = 0;
-
-    Token token;
+    Expression expr = NULL;
     FILE * fin = fopen("input.txt", "r");
-    token_next(&token, fin);
-
-    while (token.type != FINAL) {
-        tokens[tokens_qty++] = token;
-        token_next(&token, fin);
+    int err = parse(&expr, fin);
+    if (err || expr == NULL) {
+        fprintf(stderr, "Error: syntax error or no memory.\n");
+        return EXIT_FAILURE;
     }
     fclose(fin);
-    Tree tree = tree_create(tokens, 0, tokens_qty - 1);
+    err = expression_transform(&expr);
+    if (err) {
+        fprintf(stderr, "Error: an error during transformation occured.\n");
+        return EXIT_FAILURE;
+    }
 
-    printf("\nExpression tree:\n");
-    tree_print(tree, 0);
-
-    tree_transform(&tree);
-
-    printf("\nSemitransformed expression tree:\n");
-    tree_print(tree, 0);
-
-    printf("\nTree's infix linearization:\n");
-    tree_infix(tree);
+    if (expr->arity == UNARY && expr->data.type == BRACKET) {
+        expr = expr->left;
+    }
+    //tree_print(expr);
     printf("\n");
+    expression_print(expr);
+    expression_destroy(&expr);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
-

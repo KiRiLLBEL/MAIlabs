@@ -1,100 +1,97 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
 #include <ctype.h>
+#include <stdbool.h>
 
+#include "mystring.h"
 #include "lexer.h"
 
-void token_next(Token *t, FILE * fin)
+int token_next(Token *t, FILE * fin)
 {
-    static bool can_be_unary = true; // http://en.wikipedia.org/wiki/Static_variable
+    token_free(t);
     char c;
-    do { // Избавление от пробельных литер
+
+    do {
         c = fgetc(fin);
     } while (isspace(c));
-    
-    if (c == EOF) { // The end
+
+    if (c == EOF) {
         t->type = FINAL;
+        return LEXER_SUCCESS;
     }
-    
-    else if (isalpha(c) || c == '_') { // Переменные
-        t->type = VARIABLE;
-        t->data.variable_name = c;
-        can_be_unary = false;
-    }
-    
-    else if (isdigit(c)) { // Числа
-        float result;
-        ungetc(c, fin);
-        fscanf(fin,"%f", &result);
-        
-        if (result == (int) result) {
-            t->type = INTEGER;
-            t->data.value_int = (int) result;
-        } else {
-            t->type = FLOATING;
-            t->data.value_float = result;
+
+    if (isalpha(c) || c == '_') {
+        String s;
+        int err = string_initialize(&s);
+
+        if (err)
+            return LEXER_ERROR;
+
+        while (isalnum(c)) {
+            err = string_append(&s, c);
+            if (err) {
+                string_destroy(&s);
+                return LEXER_ERROR;
+            }
+            c = fgetc(fin);
         }
-        can_be_unary = false;
+        ungetc(c, fin);
+
+        t->type = VARIABLE;
+        t->data.variable_name = s;
+
+        return LEXER_SUCCESS;
     }
-    
-    else if (c == '(' || c == ')') {
+    if (isdigit(c) || c == '.') {
+        int n = 0;
+        bool left = false;
+
+        while (isdigit(c)) {
+            left = true;
+            n = 10 * n + (c - '0');
+            c = fgetc(fin);
+        }
+
+        if (c == '.') {
+            double f = n;
+            double m = 0.1L;
+            c = fgetc(fin);
+
+            if (!left && !isdigit(c)) {
+                ungetc(c, fin);
+                t->type = OPERATOR;
+                t->data.operator_name = '.';
+                return LEXER_SUCCESS;
+            }
+
+            while (isdigit(c)) {
+                f = f + m * (c - '0');
+                m /= 10;
+                c = fgetc(fin);
+            }
+            ungetc(c, fin);
+
+            t->type = FLOATING;
+            t->data.value_float = f;
+
+            return LEXER_SUCCESS;
+        }
+        ungetc(c, fin);
+
+        t->type = INTEGER;
+        t->data.value_int = n;
+
+        return LEXER_SUCCESS;
+    }
+
+    if (c == '(' || c == ')') {
         t->type = BRACKET;
         t->data.is_left_bracket = (c == '(');
-        can_be_unary = t->data.is_left_bracket;
-    }
-    
-    else if (can_be_unary && (c == '-' || c == '+')) { // Учёт минуса перед числом
-        int m = (c == '+') ? +1 : -1; // Знак
-        
-        do {
-            c = fgetc(fin);
-        } while (isspace(c));
-        
-        if (isdigit(c)) {
-            ungetc(c, fin);
-            token_next(t, fin); // После минуса и т.д. надо число считать
-            if (t->type == INTEGER) {
-                t->data.value_int = m * (t->data.value_int);
-            } else {
-                t->data.value_float = m * (t->data.value_float);
-            }
-        }
-        else {
-            ungetc(c, fin);
-            t->type = OPERATOR;
-            t->data.operator_name = '-';
-            can_be_unary = true;
-        }
-    }
-    
-    else {
-        t->type = OPERATOR;
-        t->data.operator_name = c;
-        can_be_unary = true;
-    }
-}
 
-void token_print(Token *t)
-{
-    switch (t->type) {
-        case FINAL:
-            break;
-        case INTEGER:
-            printf("%d", t->data.value_int);
-            break;
-        case FLOATING:
-            printf("%lg", t->data.value_float);
-            break;
-        case VARIABLE:
-            printf("%c", t->data.variable_name);
-            break;
-        case OPERATOR:
-            printf("%c", t->data.operator_name);
-            break;
-        case BRACKET:
-            printf("%c", (t->data.is_left_bracket) ? '(' : ')');
-            break;
+        return LEXER_SUCCESS;
     }
-}
 
+    t->type = OPERATOR;
+    t->data.operator_name = c;
+
+    return LEXER_SUCCESS;
+}

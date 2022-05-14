@@ -1,8 +1,11 @@
-CC = gcc 
-CFLAGS = -g -Wall -Wextra -pedantic -std=c99 -w -pipe -O3 -lm
+CC = gcc
+CFLAGS = -Wall -Wextra -g -std=c99 -O3
 
-lab24:  lexer.o tree.o transform.o main.o
-	$(CC) $^ -o $@ $(CFLAGS)
+symbolic:	mystring.o token.o lexer.o expression.o parser.o printer.o transform.o main.o
+	$(CC) $^ -o $@
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o lab24 
+	rm -f symbolic *.o

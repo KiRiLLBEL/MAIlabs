@@ -1,8 +1,11 @@
 #ifndef __TRANSFORM_H__
 #define __TRANSFORM_H__
 
-#include "tree.h"
+#include "expression.h"
 
-void tree_transform(Tree *t);
+#define TRANSORMATION_SUCCESS 0
+#define TRANSORMATION_ERROR  -1
 
-#endif
+int expression_transform(Expression *expr);
+
+#endif // __TRANSFORM_H__

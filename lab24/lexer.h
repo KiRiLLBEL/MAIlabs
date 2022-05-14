@@ -1,30 +1,11 @@
 #ifndef __LEXER_H__
 #define __LEXER_H__
 
-#include <stdbool.h>
+#include "token.h"
 #include "stdio.h"
-typedef enum {
-    FINAL, // Идентификатор конца входной строки
-    INTEGER,
-    FLOATING,
-    OPERATOR,
-    VARIABLE,
-    BRACKET
-} TokenType;
+#define LEXER_SUCCESS 0
+#define LEXER_ERROR  -1
 
-typedef struct {
-    TokenType type;
-    union {
-        int   value_int;
-        float value_float;
-        char  operator_name;
-        bool  is_left_bracket; // Левая скобка - истина, правая - ложь
-        char  variable_name;
-        int variable_sign;
-    } data;
-} Token; // Именно они будут в узлах дерева выражений
+int token_next(Token *t, FILE * fin);
 
-void token_print(Token *t);
-void token_next(Token *t, FILE * fin); // Считать в *t следующий "кусок" входной строки
-
-#endif
+#endif // __LEXER_H__
