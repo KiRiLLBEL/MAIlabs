@@ -4,7 +4,11 @@
 
 int match_power(Tree *t)
 {
-    return ((*t) != NULL) && ((*t)->node.type == OPERATOR) && ((*t)->node.data.operator_name == '*');
+     return ((*t) != NULL) && ((*t)->node.type == OPERATOR)
+           && ((*t)->node.data.operator_name == '^')
+           && (((*t)->left->node.type == INTEGER) ||
+               ((*t)->left->node.type == FLOATING))
+           && ((*t)->right->node.type == INTEGER);
 }
 
 void transform_power(Tree *t)
