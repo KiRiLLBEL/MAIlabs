@@ -6,6 +6,7 @@ int size(map * m) {
 map * create_map() {
     map * m = malloc(sizeof(map));
     m->size = 0;
+    m->sorted = false;
     return m;
 }
 void delete_map(map * m) {
@@ -56,27 +57,29 @@ void print_table(map * m) {
     }
 }
 void bin_search(map * m, int key) {
-    int left = -1;
-    int right = size(m);
-    while(left < right - 1) {
-        int middle = (left + right) / 2;
-        if(m->maps[middle]->key < key) {
-            left = middle;
-        } else {
-            right = middle;
+    if(m->sorted){
+        int left = -1;
+        int right = size(m);
+        while (left < right - 1) {
+            int middle = (left + right) / 2;
+            if (m->maps[middle]->key < key) {
+                left = middle;
+            } else {
+                right = middle;
+            }
         }
+        if (m->maps[right]->key != key) {
+            printf("Element not found");
+        } else {
+            printf("+-----+-----------------------------------------------------------------------------------+\n");
+            printf("| key |                                      value                                        |\n");
+            printf("+-----+-----------------------------------------------------------------------------------+\n");
+            printf("| %-3d | %-81s |\n", m->maps[right]->key, m->maps[right]->value);
+            printf("+-----+-----------------------------------------------------------------------------------+\n");
+        }
+    } else {
+        printf("Map not sorted\n");
     }
-    if (m->maps[right]->key != key) {
-        printf("Element not found");
-    }
-    else {
-        printf("+-----+-----------------------------------------------------------------------------------+\n");
-        printf("| key |                                      value                                        |\n");
-        printf("+-----+-----------------------------------------------------------------------------------+\n");
-        printf("| %-3d | %-81s |\n", m->maps[right]->key, m->maps[right]->value);
-        printf("+-----+-----------------------------------------------------------------------------------+\n");
-    }
-
 }
 void reverse_table(map * m) {
     print_table(m);
@@ -88,6 +91,7 @@ void reverse_table(map * m) {
     }
     print_table(m);
     printf("\n");
+    m->sorted = false;
 }
 void diffuse(map * m) {
     print_table(m);
@@ -103,6 +107,7 @@ void diffuse(map * m) {
     }
     print_table(m);
     printf("\n");
+    m->sorted = false;
 }
 void sort(map * m) {
     print_table(m);
@@ -118,4 +123,5 @@ void sort(map * m) {
     }
     print_table(m);
     printf("\n");
+    m->sorted = true;
 }

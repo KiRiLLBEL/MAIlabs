@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "stdio.h"
 #include "string.h"
+#include "stdbool.h"
 #define MAXLEN 128
 typedef struct mapitem {
     int key;
@@ -12,6 +13,7 @@ typedef struct mapitem {
 } mapitem;
 typedef struct map {
     int size;
+    bool sorted;
     mapitem * maps[MAXLEN];
 } map;
 int size(map * m);
