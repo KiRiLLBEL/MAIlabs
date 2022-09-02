@@ -4,13 +4,13 @@
 		{
 			"type": "cppbuild",
 			"label": "C/C++: gcc.exe сборка активного файла",
-			"command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
 			"args": [
 				"-fdiagnostics-color=always",
 				"-I",
 				"${fileDirname}",
 				"-g",
-				"*.c",
+				"*.cpp",
 				"-o",
 				"${fileDirname}\\main.exe"
 			],
@@ -18,10 +18,10 @@
 				"cwd": "${fileDirname}"
 			},
 			"problemMatcher": [
-				"$gcc"
+				"$g++"
 			],
 			"group": "build",
-			"detail": "компилятор: C:\\msys64\\mingw64\\bin\\gcc.exe"
+			"detail": "компилятор: C:\\msys64\\mingw64\\bin\\g++.exe"
 		}
 	]
 }

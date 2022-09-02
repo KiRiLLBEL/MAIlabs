@@ -1,0 +1,6 @@
+void delete(struct item * head) {
+    if (head != NULL) {
+        delete(head->next);
+        free(head);
+    }
+}

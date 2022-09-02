@@ -1,0 +1,10 @@
+void dfs(nodeBin * tree, int depth, int * depthMax, nodeBin ** leafMax) {
+    if (tree != NULL) {
+        if(depth > *depthMax) {
+            *depthMax = depth;
+            *leafMax = tree;
+        }
+        dfs(tree->left, depth + 1, depthMax, leafMax);
+        dfs(tree->right, depth + 1, depthMax, leafMax);
+    }
+}

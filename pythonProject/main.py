@@ -1,1 +1,1 @@
-import te
+print("Hello world")
