@@ -1,147 +1,15 @@
-**Решите:**
 
-1. a and b = False
 
-2. (a and b) or b = False
 
-3. (a and b) or not (a and b) = True
-
-4. a and b or not (a or b) or b = False
-
-5. b and b or not a and (a or b or a) or not (a or b) = False
-
-6. 1 << 2 = 4
-
-7. 1 & 0 | 1 >> 1 = 0
-
-8. 1 & 0 | 1 >> 0 = 1
-
-9. 0b101 & 0b111 ^ 0b111 | 0b010 = 2 Комментарий: "0b101" - запись числа "5" на языке Python в двоичном виде 
 
 # Начните писать код тут
-def cmp(a, b):
-    return a if a < b else b
 
-def cmp3(a, b, c):
-    return min([a, b, c])
-cmp3(3, 10, 25)
 
 # Начните писать код тут
-def cmpeq(a, b, c):
-    if a == b and a == c:
-        return 3
-    elif a == b or a == c or b == c:
-        return 2
-    else:
-        return 0
-cmpeq(2, 0, 2)
-
-
-def sumarr(a):
-    sum:int = 0
-    for i in range(0, 10):
-        sum += a[i]
-    return sum
-sumarr([1, 2 , 3, 4, 5, 6, 7, 8, 9, 10])
-
-# Начните писать код тут
-def zero(a):
-    count = 0
-    for i in range(0, len(a)):
-        if(a[i] == 0): count += 1
-    return count
-zero([1, 2, 3, 0])
-
-# Начните писать код тут
-n = int(input())
-for i in range(1, n + 1):
-    for j in range(1, i + 1):
-        print(j, end="")
-    print("")
-
-n = int(input())
-for i in range(1, n + 1):
-    for j in range(1, i + 1):
-        print(j, end="")
-    for j in range(i, 0, -1):
-        print(j, end="")
-    print("")
-
-n = int(input())
-for i in range(1, n + 1):
-    print(" "*((2*n - 2*i) // 2), end="")
-    print(*range(1, i + 1), sep="", end='')
-    print(*range(i, 0, -1), sep="", end='')
-    print(" "*((2*n - 2*i) // 2))
-for i in range(n, 0, -1):
-    print(" "*((2*n - 2*i) // 2), end="")
-    print(*range(1, i + 1), sep="", end='')
-    print(*range(i, 0, -1), sep="", end='')
-    print(" "*((2*n - 2*i) // 2))
 
     # Начните писать код тут
-print(row[2:3])
+
 
 # Начните писать код тут
-print(row[len(row)- 1:len(row)])
 
-# Начните писать код тут
-print(row[:5])
-
-print(row[:len(row) - 2])
-
-for i in range(0, len(row), 2):
-    print(row[i], end="")
-
-    for i in range(1, len(row), 2):
-    print(row[i], end="")
-
-    # Начните писать код тут
-for i in range(len(row) - 1, -1, -1):
-    print(row[i], end="")
-
-    # Начните писать код тут
-for i in range(len(row) - 1, -1, -2):
-    print(row[i], end="")
-
-    # Начните писать код тут
-print(len(row))
-
-# Начните писать код тут
-def doubled(a):
-    return [a[i] for i in range(0, len(a), 2)]
-a = [1, 2, 3, 4, 5, 6]
-doubled(a)
-
-def doubled(a):
-    return [a[i] for i in range(1, len(a), 1) if a[i] > a[i-1]]
-a = [1, 1, 1, 1, 1, 1]
-doubled(a)
-
-# Начните писать код тут
-def doubled(a):
-    a[a.index(max(a))],a[a.index(min(a))] = a[a.index(min(a))],a[a.index(max(a))]
-    return a
-a = [1, 1, 4, 1, 1, 2]
-doubled(a)
-
-# Начните писать код тут
-def func(a, b):
-    return a[b]
-
-    # Начните писать код тут
-def func(a=list):
-    s = {i for i in a}
-    return len(s)
-a = [1,2,3,4,5,5]
-func(a)
-
-# Начните писать код тут
-def func(a:list, b:list):
-    s1 = set(a)
-    s2 = set(b)
-    return len(s1.intersection(s2))
-a = [1, 2, 3]
-b = [2]
-func(a, b)
 
