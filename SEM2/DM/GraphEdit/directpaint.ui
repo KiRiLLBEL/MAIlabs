@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>directPaint</class>
+ <widget class="QWidget" name="directPaint">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Paint</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QPushButton" name="deleteButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>3</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>200</width>
+         <height>300</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: white;
+}
+QPushButton:hover {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: grey;
+}
+QPushButton:pressed {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: black;
+}</string>
+       </property>
+       <property name="text">
+        <string>delete</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="resetButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>3</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>200</width>
+         <height>300</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: white;
+}
+QPushButton:hover {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: grey;
+}
+QPushButton:pressed {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: black;
+}</string>
+       </property>
+       <property name="text">
+        <string>reset</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="funcButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>3</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>200</width>
+         <height>300</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: white;
+}
+QPushButton:hover {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: grey;
+}
+QPushButton:pressed {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: black;
+}</string>
+       </property>
+       <property name="text">
+        <string>function</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="delFuncButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>3</width>
+         <height>75</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>200</width>
+         <height>300</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: white;
+}
+QPushButton:hover {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: grey;
+}
+QPushButton:pressed {
+border: 2px solid #8f8f91;
+border-radius: 6px;
+background-color: black;
+}</string>
+       </property>
+       <property name="text">
+        <string>delete color</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

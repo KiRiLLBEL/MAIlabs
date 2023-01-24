@@ -1,3 +1,0 @@
-C:/Users/kiril/Projects/clion/zaychev/cmake-build-debug/CMakeFiles/zaychev.dir
-C:/Users/kiril/Projects/clion/zaychev/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/kiril/Projects/clion/zaychev/cmake-build-debug/CMakeFiles/rebuild_cache.dir
