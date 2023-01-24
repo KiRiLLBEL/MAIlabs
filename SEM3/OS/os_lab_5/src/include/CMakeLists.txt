@@ -1,0 +1,6 @@
+add_library(der1 SHARED der1.c)
+add_library(der2 SHARED der2.c)
+target_link_libraries(der1 m)
+target_link_libraries(der2 m)
+add_library(trans1 SHARED trans1.c)
+add_library(trans2 SHARED trans2.c)

@@ -1,0 +1,1 @@
+add_library(zmq_s STATIC zmq_struct.c)
