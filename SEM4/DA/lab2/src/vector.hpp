@@ -1,4 +1,6 @@
 #pragma once
+
+#include <stdlib.h>
 template<class T>
 void FillN(T* object, size_t size, T value) {
     for(size_t i = 0; i < size; ++i) {

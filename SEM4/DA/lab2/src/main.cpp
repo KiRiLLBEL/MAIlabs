@@ -9,13 +9,11 @@
 int main() {
     std::cin.tie(0);
     std::ios::sync_with_stdio(false);
-    TString command;
-    TString key;
-    TString path;
+
+    TString command, key, path;
     unsigned long long value;
     TBTree tree(3);
     while(std::cin >> command) {
-
         if(command[0] == '+') {
             std::cin >> key >> value;
             key = key.ToLower();
@@ -54,6 +52,5 @@ int main() {
         }
 
     }
-
     return 0;
 }
