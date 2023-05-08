@@ -15,3 +15,8 @@
 - [Операционные системы](/SEM3/OS/)
 - [Теоретическая механика](/SEM3/TERMEX/)
 - [ООП](https://github.com/KiRiLLBEL/TGBotDescriptionGeneration)
+
+## 4 семестр
+
+- [Дискретный анализ](/SEM4/DA/)
+- [Системы программирования](/SEM4/SP/)

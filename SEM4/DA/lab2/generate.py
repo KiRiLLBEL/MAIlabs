@@ -9,7 +9,7 @@ TEST_FOLDER_INSERT = './test/insert' # путь к папке с тестами
 TEST_FOLDER_DELETE = './test/delete' # путь к папке с тестами
 TEST_FOLDER_SEARCH = './test/search' # путь к папке с тестами
 
-INCREASE_COEF = 200 # коэфециент, с которым будут расти элементы в тестах
+INCREASE_COEF = 100000 # коэфециент, с которым будут расти элементы в тестах
 TESTS_AMOUNT = 100 # кол-во тестов
 
 

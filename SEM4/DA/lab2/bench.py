@@ -9,10 +9,10 @@ timeMAP = []
 countBTREE = []
 countMAP = []
 
-with open(BTREE_PATH + "search.txt") as f:
+with open(BTREE_PATH + "insert.txt") as f:
     for line in f:
         timeBTREE.append(int(int(line) / 1000))
-with open(MAP_PATH + "search.txt") as f:
+with open(MAP_PATH + "insert.txt") as f:
     for line in f:
         timeMAP.append(int(int(line) / 1000))
 
@@ -26,7 +26,6 @@ print(timeBTREE)
 print(timeMAP)
 
 ax.plot(countBTREE, timeBTREE, label="b-tree")
-ax.plot(countMAP, timeMAP, label='std::map')
 ax.grid()
 ax.legend()
 #  Добавляем подписи к осям:
