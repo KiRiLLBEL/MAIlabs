@@ -24,7 +24,7 @@ def odesys(y, t, m1, m2, c, R, l, g):
     return dy
 
 m1 = 10
-m2 = 0.001
+m2 = 2
 c = 15
 R = 1
 l = 1
