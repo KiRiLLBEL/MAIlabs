@@ -6,6 +6,17 @@
 #include <QtOpenGL>
 #include <iostream>
 Render::Render(QWidget *parent) : QOpenGLWidget(parent) {
+    QTimer* timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &Render::animate);
+    timer->start(10); // Запускаем таймер каждые 10 миллисекунд
+}
+
+void Render::animate() {
+    time += 0.01f;
+    time = fmod(time, 100.0f);
+    if (animationStart) {
+        update();
+    }
 }
 
 void Render::initializeGL() {
@@ -13,7 +24,7 @@ void Render::initializeGL() {
     glClearColor(0, 0, 0, 1);
     glEnable(GL_DEPTH_TEST);
 
-    bool vertexShader = program.addShaderFromSourceCode(QOpenGLShader::Vertex,
+    bool vertexShader = staticProgram.addShaderFromSourceCode(QOpenGLShader::Vertex,
         "#version 330 core\n"
         "layout (location = 0) in vec4 position;\n"
         "layout (location = 1) in vec4 color;\n"
@@ -32,9 +43,9 @@ void Render::initializeGL() {
         "   vertexNormal = vec3(rotateMatrix * normal);\n"
         "}");
     if(!vertexShader) {
-        std::cout << program.log().toStdString() << "\n";
+        std::cout << staticProgram.log().toStdString() << "\n";
     }
-    bool fragmentShader = program.addShaderFromSourceCode(QOpenGLShader::Fragment,
+    bool fragmentShader = staticProgram.addShaderFromSourceCode(QOpenGLShader::Fragment,
         "#version 330 core\n"
         "in vec3 vertexColor;\n"
         "in vec3 vertexNormal;\n"
@@ -55,9 +66,56 @@ void Render::initializeGL() {
         "   FragColor = vec4((ambientParam + diff + spec) * vertexColor, 1.0);\n"
         "}");
     if(!fragmentShader) {
-        std::cout << program.log().toStdString() << "\n";
+        std::cout << staticProgram.log().toStdString() << "\n";
     }
-    program.link();
+
+    staticProgram.link();
+
+    animationProgram.addShaderFromSourceCode(QOpenGLShader::Vertex,
+        "#version 330 core\n"
+        "layout (location = 0) in vec4 position;\n"
+        "layout (location = 1) in vec4 color;\n"
+        "layout (location = 2) in vec4 normal;\n"
+        "out vec3 vertexColor;\n"
+        "out vec3 vertexNormal;\n"
+        "out vec3 vertexPos;\n"
+        "uniform mat4 projectionMatrix;\n"
+        "uniform mat4 viewMatrix;\n"
+        "uniform mat4 modelMatrix;\n"
+        "uniform mat4 rotateMatrix;\n"
+        "uniform float time;\n"
+        "void main() {\n"
+        "   mat4 model = modelMatrix;\n"
+        "   model[3][0] += cos(time);\n"
+        "   model[3][1] += sin(time);\n"
+        "   gl_Position = projectionMatrix * viewMatrix * model * position;\n"
+        "   vertexPos = vec3(model * position);\n"
+        "   vertexColor = vec3(color);\n"
+        "   vertexNormal = vec3(rotateMatrix * normal);\n"
+        "}");
+
+    animationProgram.addShaderFromSourceCode(QOpenGLShader::Fragment,
+        "#version 330 core\n"
+        "in vec3 vertexColor;\n"
+        "in vec3 vertexNormal;\n"
+        "in vec3 vertexPos;\n"
+        "uniform vec4 vertexLight;\n"
+        "uniform float ambientParam;\n"
+        "uniform float specularParam;\n"
+        "uniform float diffuseParam;\n"
+        "uniform float shininessParam;\n"
+        "out vec4 FragColor;\n"
+        "void main() {\n"
+        "   vec3 norm  = normalize(vertexNormal);\n"
+        "   vec3 lightDir = normalize(vec3(vertexLight) - vertexPos);\n"
+        "   float diff = diffuseParam * max(dot(norm, lightDir), 0.0);\n"
+        "   vec3 viewDir = normalize(-vertexPos);\n"
+        "   vec3 reflectDir = reflect(-lightDir, norm);\n"
+        "   float spec = specularParam * pow(max(dot(viewDir, reflectDir), 0.0), shininessParam);\n"
+        "   FragColor = vec4((ambientParam + diff + spec) * vertexColor, 1.0);\n"
+        "}");
+
+    animationProgram.link();
 
     vao.create();
     vao.bind();
@@ -65,8 +123,8 @@ void Render::initializeGL() {
     vbo.create();
     vbo.bind();
 
-    ebo.create();  // Мы создаем EBO
-    ebo.bind();  // Мы связываем EBO
+    ebo.create();
+    ebo.bind();
 
     vao.release();
     vbo.release();
@@ -102,6 +160,15 @@ void Render::rotateNormal(QMatrix4x4& matrix, const Transformation& transform) {
     matrix.rotate(transform.angleZ, {0, 0, 1});
 }
 
+void Render::startAnimation() {
+    animationStart = true;
+}
+
+void Render::stopAnimation() {
+    animationStart = false;
+    time = 0;
+}
+
 QVector4D Render::rotateLight() {
     QMatrix4x4 matrix;
     matrix.setToIdentity();
@@ -121,17 +188,20 @@ void Render::paintGL() {
     transfromMatrix(modelMatrix, object.transform);
     QMatrix4x4 rotateMatrix;
     rotateNormal(rotateMatrix, object.transform);
-
-    program.bind();
-    program.setUniformValue("projectionMatrix", projectionMatrix);
-    program.setUniformValue("viewMatrix", viewMatrix);
-    program.setUniformValue("modelMatrix", modelMatrix);
-    program.setUniformValue("rotateMatrix", rotateMatrix);
-    program.setUniformValue("vertexLight", rotateLight());
-    program.setUniformValue("ambientParam", object.property.ambient);
-    program.setUniformValue("specularParam", object.property.specular);
-    program.setUniformValue("diffuseParam", object.property.diffuse);
-    program.setUniformValue("shininessParam", object.property.shininess);
+    QOpenGLShaderProgram* program = animationStart ? &animationProgram : &staticProgram;
+    program->bind();
+    program->setUniformValue("projectionMatrix", projectionMatrix);
+    if(animationStart) {
+        program->setUniformValue("time", time);
+    }
+    program->setUniformValue("viewMatrix", viewMatrix);
+    program->setUniformValue("modelMatrix", modelMatrix);
+    program->setUniformValue("rotateMatrix", rotateMatrix);
+    program->setUniformValue("vertexLight", rotateLight());
+    program->setUniformValue("ambientParam", object.property.ambient);
+    program->setUniformValue("specularParam", object.property.specular);
+    program->setUniformValue("diffuseParam", object.property.diffuse);
+    program->setUniformValue("shininessParam", object.property.shininess);
 
     vao.bind();
     vbo.bind();
@@ -140,23 +210,22 @@ void Render::paintGL() {
     ebo.bind();  // Мы связываем EBO
     ebo.allocate(object.polygons.data(), sizeof(unsigned int) * object.polygons.size());  // Мы выделяем память для EBO
 
-    program.enableAttributeArray(0);
-    program.setAttributeBuffer(0, GL_FLOAT, offsetof(Vertex, position), 4, sizeof(Vertex));
+    program->enableAttributeArray(0);
+    program->setAttributeBuffer(0, GL_FLOAT, offsetof(Vertex, position), 4, sizeof(Vertex));
 
-    program.enableAttributeArray(1);
-    program.setAttributeBuffer(1, GL_FLOAT, offsetof(Vertex, color), 4, sizeof(Vertex));
+    program->enableAttributeArray(1);
+    program->setAttributeBuffer(1, GL_FLOAT, offsetof(Vertex, color), 4, sizeof(Vertex));
 
-    program.enableAttributeArray(2);
-    program.setAttributeBuffer(2, GL_FLOAT, offsetof(Vertex, normal), 4, sizeof(Vertex));
+    program->enableAttributeArray(2);
+    program->setAttributeBuffer(2, GL_FLOAT, offsetof(Vertex, normal), 4, sizeof(Vertex));
 
     glDrawElements(GL_TRIANGLES, object.polygons.size(), GL_UNSIGNED_INT, 0);
-    program.disableAttributeArray(0);
-    program.disableAttributeArray(1);
-    program.disableAttributeArray(2);
+    program->disableAttributeArray(0);
+    program->disableAttributeArray(1);
+    program->disableAttributeArray(2);
 
     vao.release();
-    program.release();
-
+    program->release();
 }
 
 void Render::resizeGL(int w, int h) {

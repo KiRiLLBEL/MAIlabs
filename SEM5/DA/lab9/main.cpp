@@ -1,9 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
+
 using namespace std;
+using namespace std::chrono;
+
 using Graph = vector<vector<int>>;
 using ll = long long;
 const ll INF = 1e18;
+
 
 struct Node {
     int u, v;
@@ -41,11 +46,14 @@ int main() {
         --v;
         g[i] = {u, v, w};
     }
+
+    auto start = high_resolution_clock::now();
     ll path = ford_bellman(--s, --e, n, g);
-    if(path == INF) {
-        cout << "No solution\n";
-    } else {
-        cout << path << "\n";
-    }
+    auto stop = high_resolution_clock::now();
+
+    auto duration = duration_cast<milliseconds>(stop - start);
+
+    cout << duration.count()  << endl;
+
     return 0;
 }
