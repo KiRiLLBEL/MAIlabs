@@ -8,7 +8,7 @@
 Render::Render(QWidget *parent) : QOpenGLWidget(parent) {
     QTimer* timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &Render::animate);
-    timer->start(10); // Запускаем таймер каждые 10 миллисекунд
+    timer->start(10);
 }
 
 void Render::animate() {

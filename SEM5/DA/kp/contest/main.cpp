@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
-#include <unordered_map>
+#include <chrono>
 #include <queue>
 #include <cmath>
 using namespace std;
-using namespace std;
+using namespace std::chrono;
 using Graph = vector<vector<int>>;
 using ll = long long;
 struct Point {
@@ -72,14 +72,27 @@ int main() {
         g[u].push_back(v);
         g[v].push_back(u);
     }
-    int q;
-    cin >> q;
-    for(int i = 0; i < q; ++i) {
-        int x, y;
-        cin >> x >> y;
-        --x;
-        --y;
-        cout << fixed << AStar(x, y, g, vertices) << "\n";
-    }
+    // int q;
+    // cin >> q;
+    // for(int i = 0; i < q; ++i) {
+    //     int x, y;
+    //     cin >> x >> y;
+    //     --x;
+    //     --y;
+    //     cout << fixed << AStar(x, y, g, vertices) << "\n";
+    // }
+    int x, y;
+    cin >> x >> y;
+    --x;
+    --y;
+
+
+    auto start = high_resolution_clock::now();
+    AStar(x, y, g, vertices);
+    auto stop = high_resolution_clock::now();
+
+    auto duration = duration_cast<microseconds>(stop - start);
+
+    cout << duration.count()  << endl;
     return 0;
 }
