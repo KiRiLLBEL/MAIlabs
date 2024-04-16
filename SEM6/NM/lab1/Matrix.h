@@ -11,6 +11,15 @@
 
 namespace numeric {
 
+    template<class T>
+    class EigenResult {
+    public:
+        std::vector<T> eigenValues;
+        std::vector<std::vector<T>> eigenVectors;
+
+        explicit EigenResult(size_t size) : eigenValues(size), eigenVectors(size, std::vector<T>(size)) {}
+    };
+
     template<class T, template<typename> class Container = std::vector>
     class AbstractMatrix {
     protected:
@@ -28,6 +37,7 @@ namespace numeric {
         virtual Container<T> &operator[](size_t i) = 0;
 
         virtual const Container<T> &operator[](size_t i) const = 0;
+
     };
 
     template<class T, template<typename> class Container>
@@ -267,6 +277,20 @@ namespace numeric {
     }
 
     template<class T>
+    std::vector<T> operator*(const std::vector<T> &vec, T scalar) {
+        std::vector<T> result(vec.size());
+        for (size_t i = 0; i < vec.size(); ++i) {
+            result[i] = vec[i] * scalar;
+        }
+        return result;
+    }
+
+    template<class T>
+    std::vector<T> operator*(T scalar, const std::vector<T> &vec) {
+        return vec * scalar;
+    }
+
+    template<class T>
     Matrix<T> operator-(const Matrix<T> &lhs, const Matrix<T> &rhs) {
         if (lhs.rows() != rhs.rows() || lhs.cols() != rhs.cols()) {
             throw std::invalid_argument("Matrix dimensions must match for subtraction.");
@@ -300,6 +324,55 @@ namespace numeric {
         }
         return result;
     }
+
+    template<class T>
+    Matrix<T> operator*(const Matrix<T> &matrix, T scalar) {
+        Matrix<T> result(matrix.rows(), matrix.cols());
+        for (size_t i = 0; i < matrix.rows(); ++i) {
+            for (size_t j = 0; j < matrix.cols(); ++j) {
+                result[i][j] = matrix[i][j] * scalar;
+            }
+        }
+        return result;
+    }
+
+    template<class T>
+    Matrix<T> operator*(T scalar, const Matrix<T> &matrix) {
+        return matrix * scalar;
+    }
+
+    template<class T>
+    std::vector<T> operator*(const Matrix<T> &matrix, const std::vector<T> &vec) {
+        if (matrix.cols() != vec.size()) {
+            throw std::invalid_argument("The number of columns in the matrix must match the size of the vector.");
+        }
+
+        std::vector<T> result(matrix.rows(), T());
+        for (size_t i = 0; i < matrix.rows(); ++i) {
+            for (size_t k = 0; k < matrix.cols(); ++k) {
+                result[i] += matrix[i][k] * vec[k];
+            }
+        }
+        return result;
+    }
+
+    template<class T>
+    std::vector<T> operator*(const std::vector<T> &vec, const Matrix<T> &matrix) {
+        if (vec.size() != matrix.rows()) {
+            throw std::invalid_argument("The size of the vector must match the number of rows in the matrix.");
+        }
+
+        std::vector<T> result(matrix.cols(), T());
+        for (size_t j = 0; j < matrix.cols(); ++j) {
+            for (size_t i = 0; i < matrix.rows(); ++i) {
+                result[j] += vec[i] * matrix[i][j];
+            }
+        }
+        return result;
+    }
+
+
+
 
     template<class T>
     Matrix<T> &Matrix<T>::operator+=(const Matrix<T> &rhs) {
@@ -945,6 +1018,77 @@ namespace numeric {
         return x;
     }
 
+    template<class T>
+    void applyRotation(AbstractMatrix<T> &matrix, std::vector<std::vector<T>> &eigenVectors, size_t p, size_t q, T c, T s) {
+        size_t n = matrix.rows();
+        for (size_t i = 0; i < n; ++i) {
+            T mpi = matrix[i][p];
+            T mqi = matrix[i][q];
+            matrix[i][p] = c * mpi + s * mqi;
+            matrix[i][q] = -s * mpi + c * mqi;
+
+            T epi = eigenVectors[i][p];
+            T eqi = eigenVectors[i][q];
+            eigenVectors[i][p] = c * epi + s * eqi;
+            eigenVectors[i][q] = -s * epi + c * eqi;
+        }
+
+        for (size_t j = 0; j < n; ++j) {
+            T mpj = matrix[p][j];
+            T mqj = matrix[q][j];
+            matrix[p][j] = c * mpj + s * mqj;
+            matrix[q][j] = -s * mpj + c * mqj;
+        }
+    }
+
+
+    template<class T>
+    EigenResult<T> findEigenvaluesAndEigenvectors(Matrix<T>& inputMatrix, double eps)  {
+        size_t n = inputMatrix.rows();
+        EigenResult<T> result(n);
+        auto& eigenVectors = result.eigenVectors;
+        auto& eigenValues = result.eigenValues;
+        Matrix<T> matrix = inputMatrix;
+
+        for (size_t i = 0; i < n; ++i) {
+            eigenVectors[i][i] = 1;
+        }
+
+        double offDiagonalNorm;
+        do {
+            offDiagonalNorm = 0.0;
+            for (size_t p = 0; p < n; ++p) {
+                for (size_t q = p + 1; q < n; ++q) {
+                    offDiagonalNorm += matrix[p][q] * matrix[p][q];
+                }
+            }
+
+            if (sqrt(offDiagonalNorm) < eps)
+                break;
+
+            for (size_t p = 0; p < n; ++p) {
+                for (size_t q = p + 1; q < n; ++q) {
+                    T apq = matrix[p][q];
+                    if (fabs(apq) > eps) {
+                        T app = matrix[p][p];
+                        T aqq = matrix[q][q];
+                        T tau = (aqq - app) / (2 * apq);
+                        T t = (tau / fabs(tau)) * (1.0 / (fabs(tau) + sqrt(1.0 + tau * tau)));
+                        T c = 1 / sqrt(1 + t * t);
+                        T s = t * c;
+
+                        applyRotation(matrix, eigenVectors, p, q, c, s);
+                    }
+                }
+            }
+        } while (true);
+
+        for (size_t i = 0; i < n; ++i) {
+            eigenValues[i] = matrix[i][i];
+        }
+
+        return result;
+    }
 
 } // numeric
 
