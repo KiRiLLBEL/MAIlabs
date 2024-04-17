@@ -4,12 +4,12 @@ using namespace std;
 using namespace numeric;
 
 int main() {
-//    Matrix<double> matrix = inputMatrix<double>("inputMatrix.txt");
-//    cout << "\nMatrix:\n";
-//    printMatrix(matrix);
-//    cout << "\nQ R\n";
-//    auto [Q, R] = QRDecomposition(matrix);
-//    printMatrix(Q);
-//    printMatrix(R);
-//    return 0;
+    Matrix<double> matrix = inputMatrix<double>("inputMatrix.txt");
+    cout << "\nMatrix:\n";
+    printMatrix(matrix);
+    QRMatrix<double> QRDecomposition(matrix);
+
+    auto res = findEigenvaluesAndEigenvectorsByQR(matrix, 0.001, 0.0001);
+    printVector(res.eigenValues);
+    return 0;
 }

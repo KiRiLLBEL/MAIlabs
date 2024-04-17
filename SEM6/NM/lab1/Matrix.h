@@ -8,6 +8,7 @@
 #include <cmath>
 #include <string>
 #include <fstream>
+#include <complex>
 
 namespace numeric {
 
@@ -82,6 +83,8 @@ namespace numeric {
         std::unique_ptr<AbstractMatrix<T, std::vector>> transpose() const override;
 
         ~Matrix() override;
+
+        static Matrix<T> eye(size_t size);
     };
 
     template<class T>
@@ -262,6 +265,15 @@ namespace numeric {
     Matrix<T>::~Matrix() = default;
 
     template<class T>
+    Matrix<T> Matrix<T>::eye(size_t size) {
+        Matrix<T> matrix(size, size);
+        for(int i = 0; i < size; ++i) {
+            matrix[i][i] = 1;
+        }
+        return matrix;
+    }
+
+    template<class T>
     Matrix<T> operator+(const Matrix<T> &lhs, const Matrix<T> &rhs) {
         if (lhs.rows() != rhs.rows() || lhs.cols() != rhs.cols()) {
             throw std::invalid_argument("Matrix dimensions must match for addition.");
@@ -339,6 +351,20 @@ namespace numeric {
     template<class T>
     Matrix<T> operator*(T scalar, const Matrix<T> &matrix) {
         return matrix * scalar;
+    }
+
+    template<class T>
+    Matrix<T> operator/(const Matrix<T> &matrix, T scalar) {
+        if(scalar == 0) {
+            throw std::invalid_argument("Zero division");
+        }
+        Matrix<T> result(matrix.rows(), matrix.cols());
+        for (size_t i = 0; i < matrix.rows(); ++i) {
+            for (size_t j = 0; j < matrix.cols(); ++j) {
+                result[i][j] = matrix[i][j] / scalar;
+            }
+        }
+        return result;
     }
 
     template<class T>
@@ -592,6 +618,19 @@ namespace numeric {
         }
     }
 
+    template<typename T>
+    T operator*(const std::vector<T>& v1, const std::vector<T>& v2) {
+        if (v1.size() != v2.size()) {
+            throw std::invalid_argument("Vectors must be of the same length.");
+        }
+
+        T result = 0;
+        for (size_t i = 0; i < v1.size(); ++i) {
+            result += v1[i] * v2[i];
+        }
+        return result;
+    }
+
 
     template<class T>
     std::unique_ptr<AbstractMatrix<T, Row>> SparseMatrix<T>::transpose() const {
@@ -655,6 +694,17 @@ namespace numeric {
             }
         }
         return result;
+    }
+
+    template<typename T>
+    Matrix<T> outerProduct(const std::vector<T>& v1, const std::vector<T>& v2) {
+        Matrix<T> matrix(v1.size(), v2.size());
+        for (size_t i = 0; i < v1.size(); ++i) {
+            for (size_t j = 0; j < v2.size(); ++j) {
+                matrix[i][j] = v1[i] * v2[j];
+            }
+        }
+        return matrix;
     }
 
     template<class T>
@@ -1090,6 +1140,99 @@ namespace numeric {
         return result;
     }
 
+    template<class T>
+class QRMatrix {
+    public:
+        Matrix<T> Q;
+        Matrix<T> R;
+
+        explicit QRMatrix(const Matrix<T>& matrix) : Q(Matrix<T>::eye(matrix.rows())), R(matrix) {
+            init();
+        }
+
+    private:
+        void init() {
+            size_t m = R.rows();
+            size_t n = R.cols();
+
+            for (size_t j = 0; j < n - 1; ++j) {
+                T norm_x = 0;
+                for (size_t i = j; i < m; ++i) {
+                    norm_x += R[i][j] * R[i][j];
+                }
+                norm_x = std::sqrt(norm_x);
+
+                std::vector<T> v(m, 0);
+                T alpha = R[j][j] > 0 ? -norm_x : norm_x;
+                for (size_t i = j; i < m; ++i) {
+                    v[i] = R[i][j] - ((i == j) ? alpha : 0);
+                }
+
+                Matrix<T> H = Matrix<T>::eye(n) - 2.0 * (outerProduct(v, v) / (v * v));
+
+                R = H * R;
+                Q *= H;
+            }
+        }
+    };
+
+    template<class T>
+    EigenResult<std::complex<T>> findEigenvaluesAndEigenvectorsByQR(Matrix<T>& inputMatrix, double eps1, double eps2) {
+        bool continueIteration = true;
+        Matrix<T> A = inputMatrix;
+        std::vector<std::complex<T>> prevEigenvalues(inputMatrix.cols());
+
+        while(continueIteration) {
+            QRMatrix<T> QR(A);
+            A = QR.R * QR.Q;
+
+            for(int i = 0; i < A.cols(); ++i) {
+                T underDiagonal = 0;
+                for(int j = i + 1; j < A.rows(); ++j) {
+                    underDiagonal += A[j][i] * A[j][i];
+                }
+                underDiagonal = std::sqrt(underDiagonal);
+                if(i < A.cols() - 1 && underDiagonal > eps1) {
+                    T a = A[i][i], b = A[i][i + 1], c = A[i + 1][i], d = A[i + 1][i + 1];
+                    T tr = a + d;
+                    T det = a * d - b * c;
+                    T s = std::sqrt(std::abs(tr * tr / 4 - det));
+                    if (std::abs(std::complex<T>(tr / 2, s) - prevEigenvalues[i]) < eps2) {
+                        continueIteration = false;
+                    }
+                    prevEigenvalues[i] = std::complex<T>(tr / 2, s);
+                } else if(i < A.cols() - 1) {
+                    if(underDiagonal < eps1) {
+                        continueIteration = false;
+                    }
+                }
+            }
+        }
+
+        size_t i = 0;
+        EigenResult<std::complex<T>> result(A.cols());
+        while (i < A.cols()) {
+            T underDiagonal = 0;
+            for(int j = i + 1; j < A.rows(); ++j) {
+                underDiagonal += A[j][i] * A[j][i];
+            }
+            underDiagonal = std::sqrt(underDiagonal);
+            if (i < A.cols() - 1 && underDiagonal > eps1) {
+                T a = A[i][i], b = A[i][i + 1], c = A[i + 1][i], d = A[i + 1][i + 1];
+                T tr = a + d;
+                T det = a * d - b * c;
+                T s = std::sqrt(std::abs(tr * tr / 4 - det));
+                result.eigenValues[i] = std::complex<T>(tr / 2, s);
+                result.eigenValues[i + 1] = std::complex<T>(tr / 2, -s);
+                i += 2;
+            } else  {
+                result.eigenValues[i] = std::complex<T>(A[i][i], 0);
+                i++;
+            }
+        }
+
+        return result;
+    }
 } // numeric
 
 #endif //MATRIX_H
