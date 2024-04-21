@@ -3,7 +3,5 @@ project(NMlab2)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(NMlab2_1_iter 2_1_iter.cpp
-        Solving_methods.h)
-add_executable(NMlab2_1_newton 2_1_newton.cpp
-        Solving_methods.h)
+add_executable(NMlab2_1 2_1.cpp Solving_methods.h)
+add_executable(NMlab2_2 2_2.cpp Solving_methods.h ../lab1/Matrix.h)

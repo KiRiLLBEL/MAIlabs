@@ -24,7 +24,10 @@ double phi_x(double x, double lambda) {
 }
 
 int main() {
+    cout << "Iteration method:\n";
     cout << iterationMethod(phi, phi_x, 0, 1, 1, 0.1, 0.00001) << "\n";
+    cout << "\n";
+    cout << "Newton method:\n";
     cout << newtonMethod(f, f_d, f_dd, 0, 0.9, 0.00001) << "\n";
     return 0;
 }

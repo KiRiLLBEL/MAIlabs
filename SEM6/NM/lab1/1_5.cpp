@@ -8,8 +8,14 @@ int main() {
     cout << "\nMatrix:\n";
     printMatrix(matrix);
     QRMatrix<double> QRDecomposition(matrix);
-
+    cout << "\nEigen values:\n";
     auto res = findEigenvaluesAndEigenvectorsByQR(matrix, 0.001, 0.0001);
-    printVector(res.eigenValues);
+    for(auto c: res.eigenValues) {
+        if(c.imag() == 0) {
+            cout << c.real() << "\n";
+        } else {
+            cout << c.real() << " " << c.imag() << "i\n";
+        }
+    }
     return 0;
 }
