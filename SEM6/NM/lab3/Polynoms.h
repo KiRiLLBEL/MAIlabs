@@ -64,35 +64,45 @@ private:
     std::vector<SplineTuple> splines;
 
 public:
-    void buildSpline(const std::vector<double>& x, const std::vector<double>& y) {
-        int n = x.size();
-        splines.resize(n);
-        std::vector<double> h(n - 1);
+    CubicSpline(const std::vector<double>& x, const std::vector<double>& y) : splines(x.size() - 1){
+        int n = x.size() - 1;
+        std::vector<double> h(n);
 
-        for (int i = 0; i < n - 1; ++i) {
+        for (int i = 0; i < n; ++i) {
             h[i] = x[i + 1] - x[i];
         }
 
         numeric::Matrix<double> matrix(n, n);
         std::vector<double> b(n, 0);
 
-        for (int i = 1; i < n - 1; ++i) {
-            matrix[i][0] = h[i - 1];
-            matrix[i][1] = 2 * (h[i - 1] + h[i]);
-            matrix[i][2] = h[i];
+        for (int i = 1; i <= n - 1; ++i) {
+            if(i == 1) {
+                matrix[i][i] = 2 * (h[i - 1] + h[i]);
+                matrix[i][i + 1] = h[i];
+            } else if(i == n - 1) {
+                matrix[i][i - 1] = h[i - 1];
+                matrix[i][i] = 2 * (h[i - 1] + h[i]);
+            } else {
+                matrix[i][i - 1] = h[i - 1];
+                matrix[i][i] = 2 * (h[i - 1] + h[i]);
+                matrix[i][i + 1] = h[i];
+            }
             b[i] = 3 * ((y[i + 1] - y[i]) / h[i] - (y[i] - y[i - 1]) / h[i - 1]);
         }
-
-        matrix[0][1] = 1;
-        matrix[n - 1][1] = 1;
+        matrix[0][0] = 1;
 
         std::vector<double> c = numeric::tridiagonalSolve(matrix, b);
 
-        for (int i = 0; i < n - 1; ++i) {
+        for (int i = 0; i < n; ++i) {
             splines[i].a = y[i];
-            splines[i].b = (y[i + 1] - y[i]) / h[i] - h[i] * (c[i + 1] + 2 * c[i]) / 3;
+            if(i == n - 1) {
+                splines[i].b = (y[n] - y[n - 1]) / h[i] - 2.0 / 3 * h[i] * c[i];
+                splines[i].d = - c[i] / (3 * h[i]);
+            } else {
+                splines[i].b = (y[i + 1] - y[i]) / h[i] - h[i] * (c[i + 1] + 2 * c[i]) / 3;
+                splines[i].d = (c[i + 1] - c[i]) / (3 * h[i]);
+            }
             splines[i].c = c[i];
-            splines[i].d = (c[i + 1] - c[i]) / (3 * h[i]);
             splines[i].x = x[i];
         }
     }
