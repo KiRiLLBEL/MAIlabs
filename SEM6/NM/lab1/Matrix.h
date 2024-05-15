@@ -33,8 +33,6 @@ namespace numeric {
 
         virtual size_t cols() const;
 
-        virtual std::unique_ptr<AbstractMatrix<T, Container>> transpose() const = 0;
-
         virtual Container<T> &operator[](size_t i) = 0;
 
         virtual const Container<T> &operator[](size_t i) const = 0;
@@ -80,7 +78,7 @@ namespace numeric {
 
         const std::vector<T> &operator[](size_t i) const;
 
-        std::unique_ptr<AbstractMatrix<T, std::vector>> transpose() const override;
+        Matrix<T> transpose() const ;
 
         ~Matrix() override;
 
@@ -115,7 +113,7 @@ namespace numeric {
 
         const std::vector<T> &operator[](size_t i) const;
 
-        std::unique_ptr<AbstractMatrix<T, std::vector>> transpose() const override;
+        SquareMatrix<T> transpose() const;
 
         explicit operator Matrix<T>() const;
 
@@ -214,7 +212,7 @@ namespace numeric {
 
         const Row<T> &operator[](size_t row) const override;
 
-        std::unique_ptr<AbstractMatrix<T, Row>> transpose() const override;
+        SparseMatrix<T> transpose() const;
 
         ~SparseMatrix() override;
     };
@@ -251,11 +249,11 @@ namespace numeric {
     }
 
     template<class T>
-    std::unique_ptr<AbstractMatrix<T, std::vector>> Matrix<T>::transpose() const {
-        auto transposedMatrix = std::make_unique<Matrix<T>>(_cols, _rows);
+    Matrix<T> Matrix<T>::transpose() const {
+        Matrix<T> transposedMatrix(_cols, _rows);
         for (size_t i = 0; i < rows(); ++i) {
             for (size_t j = 0; j < cols(); ++j) {
-                (*transposedMatrix)[j][i] = (*this)[i][j];
+                transposedMatrix[j][i] = (*this)[i][j];
             }
         }
         return transposedMatrix;
@@ -478,11 +476,11 @@ namespace numeric {
     }
 
     template<class T>
-    std::unique_ptr<AbstractMatrix<T, std::vector>> SquareMatrix<T>::transpose() const {
-        auto transposedMatrix = std::make_unique<SquareMatrix<T>>(size);
+    SquareMatrix<T> SquareMatrix<T>::transpose() const {
+        SquareMatrix<T> transposedMatrix(size);
         for (size_t i = 0; i < rows(); ++i) {
             for (size_t j = 0; j < cols(); ++j) {
-                (*transposedMatrix)[j][i] = (*this)[i][j];
+                transposedMatrix[j][i] = (*this)[i][j];
             }
         }
         return transposedMatrix;
@@ -633,11 +631,11 @@ namespace numeric {
 
 
     template<class T>
-    std::unique_ptr<AbstractMatrix<T, Row>> SparseMatrix<T>::transpose() const {
-        auto transposedMatrix = std::make_unique<SparseMatrix<T>>(cols(), rows());
+    SparseMatrix<T> SparseMatrix<T>::transpose() const {
+        SparseMatrix<T> transposedMatrix(cols(), rows());
         for (size_t i = 0; i < rows(); ++i) {
             for (size_t j = 0; j < cols(); ++j) {
-                (*transposedMatrix)[j][i] = (*this)[i][j];
+                transposedMatrix[j][i] = (*this)[i][j];
             }
         }
         return transposedMatrix;
