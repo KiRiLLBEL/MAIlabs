@@ -22,9 +22,9 @@ int main() {
     }
 
     plt::figure_size(1200, 780);
-    plt::scatter(X, Y, 50); // исходные точки
-    plt::plot(X_cont, Y_fit1, "--g"); // аппроксимация 1-го порядка
-    plt::plot(X_cont, Y_fit2, "--r"); // аппроксимация 2-го порядка
+    plt::scatter(X, Y, 50);
+    plt::plot(X_cont, Y_fit1, "--g");
+    plt::plot(X_cont, Y_fit2, "--r");
     plt::title("Least Squares Polynomial Fit");
     plt::xlabel("X");
     plt::ylabel("Y");
