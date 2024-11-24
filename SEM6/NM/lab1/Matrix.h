@@ -9,6 +9,7 @@
 #include <string>
 #include <fstream>
 #include <complex>
+#include <iostream>
 
 namespace numeric {
 

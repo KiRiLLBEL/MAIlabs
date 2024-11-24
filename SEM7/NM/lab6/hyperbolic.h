@@ -4,6 +4,8 @@
 #include <functional>
 #include <string>
 
+#include <QMainWindow>
+
 struct SchemeConfig {
     int N;
     int K;
@@ -36,13 +38,13 @@ std::vector<std::vector<double>> implicit_scheme(
     std::function<double(double, double)> guard_end, 
     SchemeConfig& config);
 
-void visualize(
+QWidget* visualize(
     const std::vector<std::vector<double>>& true_value, 
     const std::vector<std::vector<double>>& data1, 
     const std::vector<std::vector<double>>& data2,
     SchemeConfig& config, int time);
 
-void plot_error_over_x(
+QWidget* plot_error_over_x(
     const std::vector<std::vector<double>>& true_value,
     const std::vector<std::vector<double>>& data1,
     const std::vector<std::vector<double>>& data2,
@@ -54,14 +56,14 @@ enum SchemeType {
     KRANK_NIKOLSON
 };
 
-void plot_error_3d(
+QWidget* plot_error_3d_hyperbolic(
     SchemeType type,
     const std::function<std::vector<std::vector<double>>(std::vector<double>&, std::vector<double>&, std::function<double(double, double)>, std::function<double(double, double)>, SchemeConfig&)>& scheme_function,
     const std::function<double(double, double, double)>& analytical_solution,
     std::function<double(double)> initial_condition,
-    std::function<double(double, double)> guard_start, 
-    std::function<double(double, double)> guard_end, 
+    std::function<double(double)> initial_velocity,
+    std::function<double(double, double)> guard_start,
+    std::function<double(double, double)> guard_end,
     SchemeConfig& config,
     int N_min, int N_max, int N_step,
-    int K_min, int K_max, int K_step,
-    const std::string& name);
+    int K_min, int K_max, int K_step);

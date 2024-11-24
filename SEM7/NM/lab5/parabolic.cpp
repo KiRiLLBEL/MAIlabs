@@ -1,7 +1,9 @@
 #include "parabolic.h"
 #include <vector>
 #include <functional>
-#include <matplot/matplot.h>
+#include <QMainWindow>
+#include <QtCharts>
+#include <QtDataVisualization>
 
 #include "../../../SEM6/NM/lab1/Matrix.h"
 using namespace numeric;
@@ -145,87 +147,139 @@ std::vector<std::vector<double>> krank_nikolson_scheme(
     return results;
 }
 
-void visualize(
-    const std::vector<std::vector<double>>& true_value, 
-    const std::vector<std::vector<double>>& data1, 
-    const std::vector<std::vector<double>>& data2, 
-    const std::vector<std::vector<double>>& data3, 
-    SchemeConfig& config, int time) {
-    std::vector<double> x(config.N);
-    for (int i = 0; i < config.N; ++i) {
-        x[i] = i * config.dx;
-    }
-    auto f1 = matplot::figure();
-    matplot::figure(f1);
-    matplot::hold(matplot::on);
-    auto p = matplot::plot(x, data1[time], x, data2[time], x, data3[time], x, true_value[time]);
-    matplot::title("Схема в момент времени t = " + std::to_string(time * config.dt));
-    p[0]->display_name("Явная схема");
-    p[1]->display_name("Неявная схема");
-    p[2]->display_name("Схема Кронке-Николсона");
-    p[3]->display_name("Аналитическое решение");
-    matplot::hold(matplot::off);
-    ::matplot::legend(matplot::off);
-    matplot::xlabel("x");
-    matplot::ylabel("U");
-}
-void plot_error_over_x(
+QWidget* visualize(
     const std::vector<std::vector<double>>& true_value,
     const std::vector<std::vector<double>>& data1,
     const std::vector<std::vector<double>>& data2,
     const std::vector<std::vector<double>>& data3,
     SchemeConfig& config, int time) {
-    std::vector<double> x(config.N);
-    for (int i = 0; i < config.N; ++i) {
-        x[i] = i * config.dx;
-    }
 
-    std::vector<double> error1(config.N);
-    std::vector<double> error2(config.N);
-    std::vector<double> error3(config.N);
+    QLineSeries *series1 = new QLineSeries();
+    QLineSeries *series2 = new QLineSeries();
+    QLineSeries *series3 = new QLineSeries();
+    QLineSeries *seriesTrue = new QLineSeries();
 
     for (int i = 0; i < config.N; ++i) {
-        error1[i] = std::abs(true_value[time][i] - data1[time][i]);
-        error2[i] = std::abs(true_value[time][i] - data2[time][i]);
-        error3[i] = std::abs(true_value[time][i] - data3[time][i]);
+        double x = i * config.dx;
+        series1->append(x, data1[time][i]);
+        series2->append(x, data2[time][i]);
+        series3->append(x, data3[time][i]);
+        seriesTrue->append(x, true_value[time][i]);
     }
-    auto f2 = matplot::figure();
-    matplot::figure(f2);
-    matplot::hold(matplot::on);
-    auto p = matplot::plot(x, error1, x, error2, x, error3);
-    matplot::title("Погрешность в момент времени t = " + std::to_string(time * config.dt));
-    p[0]->display_name("Погрешность явной схемы");
-    p[1]->display_name("Погрешность неявной схемы");
-    p[2]->display_name("Погрешность схемы Кранка–Николсона");
-    matplot::hold(matplot::off);
-    ::matplot::legend(matplot::off);
-    matplot::xlabel("x");
-    matplot::ylabel("Погрешность");
+
+    series1->setName("Явная схема");
+    series2->setName("Неявная схема");
+    series3->setName("Схема Кранка–Николсона");
+    seriesTrue->setName("Аналитическое решение");
+
+    // Настраиваем цвета серий
+    series1->setColor(Qt::red);
+    series2->setColor(Qt::green);
+    series3->setColor(Qt::blue);
+    seriesTrue->setColor(Qt::black);
+
+    QChart *chart = new QChart();
+    chart->addSeries(series1);
+    chart->addSeries(series2);
+    chart->addSeries(series3);
+    chart->addSeries(seriesTrue);
+
+    chart->setTitle("Схема в момент времени t = " + QString::number(time * config.dt));
+    chart->createDefaultAxes();
+
+    chart->axes(Qt::Horizontal).first()->setTitleText("x");
+    chart->axes(Qt::Vertical).first()->setTitleText("U");
+
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    return chartView;
 }
 
-void plot_error_3d(
+
+
+QWidget* plot_error_over_x(
+    const std::vector<std::vector<double>>& true_value,
+    const std::vector<std::vector<double>>& data1,
+    const std::vector<std::vector<double>>& data2,
+    const std::vector<std::vector<double>>& data3,
+    SchemeConfig& config, int time) {
+
+    QLineSeries *series1 = new QLineSeries();
+    QLineSeries *series2 = new QLineSeries();
+    QLineSeries *series3 = new QLineSeries();
+
+    for (int i = 0; i < config.N; ++i) {
+        double x = i * config.dx;
+        double error1 = std::abs(true_value[time][i] - data1[time][i]);
+        double error2 = std::abs(true_value[time][i] - data2[time][i]);
+        double error3 = std::abs(true_value[time][i] - data3[time][i]);
+
+        series1->append(x, error1);
+        series2->append(x, error2);
+        series3->append(x, error3);
+    }
+
+    series1->setName("Погрешность явной схемы");
+    series2->setName("Погрешность неявной схемы");
+    series3->setName("Погрешность схемы Кранка–Николсона");
+
+    series1->setColor(Qt::red);
+    series2->setColor(Qt::green);
+    series3->setColor(Qt::blue);
+
+    QChart *chart = new QChart();
+    chart->addSeries(series1);
+    chart->addSeries(series2);
+    chart->addSeries(series3);
+
+    chart->setTitle("Погрешность в момент времени t = " + QString::number(time * config.dt));
+    chart->createDefaultAxes();
+
+    chart->axes(Qt::Horizontal).first()->setTitleText("x");
+    chart->axes(Qt::Vertical).first()->setTitleText("Погрешность");
+
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    return chartView;
+}
+
+
+QWidget* plot_error_3d(
     SchemeType type,
     const std::function<std::vector<std::vector<double>>(std::vector<double>&, std::function<double(double, double)>, std::function<double(double, double)>, SchemeConfig&)>& scheme_function,
     const std::function<double(double, double, double)>& analytical_solution,
     std::function<double(double)> initial_condition,
-    std::function<double(double, double)> guard_start, 
-    std::function<double(double, double)> guard_end, 
+    std::function<double(double, double)> guard_start,
+    std::function<double(double, double)> guard_end,
     SchemeConfig& config,
     int N_min, int N_max, int N_step,
-    int K_min, int K_max, int K_step,
-    const std::string& filename) {
+    int K_min, int K_max, int K_step) {
 
-    std::vector<double> N_values;
-    std::vector<double> K_values;
-    std::vector<double> errors;
-
-    int original_N = config.N;
-    double original_dx = config.dx;
-    int original_K = config.K;
-    double original_dt = config.dt;
+    QVector<double> N_values;
+    QVector<double> K_values;
+    QVector<QVector<double>> error_matrix;
 
     for (int N = N_min; N <= N_max; N += N_step) {
-        for (int K = K_min; K <= K_max; K += K_step) {
+        N_values.append(N);
+    }
+    for (int K = K_min; K <= K_max; K += K_step) {
+        K_values.append(K);
+    }
+
+    for (int K_idx = 0; K_idx < K_values.size(); ++K_idx) {
+        QVector<double> error_row;
+        int K = K_values[K_idx];
+
+        for (int N_idx = 0; N_idx < N_values.size(); ++N_idx) {
+            int N = N_values[N_idx];
+
             config.N = N;
             config.dx = M_PI / (N - 1);
             config.K = K;
@@ -234,14 +288,13 @@ void plot_error_3d(
             if (type == EXPLICIT) {
                 double alpha = (config.a * config.dt) / (config.dx * config.dx);
                 if (alpha > 0.5) {
+                    error_row.append(0.0);
                     continue;
                 }
             }
 
             auto u0 = start(initial_condition, config);
-
             auto true_value = true_calculation(analytical_solution, config);
-
             auto result = scheme_function(u0, guard_start, guard_end, config);
 
             double total_error = 0.0;
@@ -254,39 +307,48 @@ void plot_error_3d(
             }
 
             double avg_error = total_error / total_points;
-
-            N_values.push_back(N);
-            K_values.push_back(K);
-            errors.push_back(avg_error);
+            error_row.append(avg_error);
         }
+        error_matrix.append(error_row);
     }
 
-    config.N = original_N;
-    config.dx = original_dx;
-    config.K = original_K;
-    config.dt = original_dt;
+    Q3DSurface *graph = new Q3DSurface();
 
+    QWidget *container = QWidget::createWindowContainer(graph);
 
-    auto [N_mesh, K_mesh] = matplot::meshgrid(matplot::unique(N_values), matplot::unique(K_values));
-    std::vector<std::vector<double>> errors_mesh(K_mesh.size(), std::vector<double>(N_mesh[0].size(), 0.0));
+    QSurfaceDataArray *dataArray = new QSurfaceDataArray();
 
-    for (size_t k = 0; k < K_mesh.size(); ++k) {
-        for (size_t n = 0; n < N_mesh[0].size(); ++n) {
+    double scaleFactor = double(K_max) / N_max;
 
-            for (size_t i = 0; i < N_values.size(); ++i) {
-                if (N_values[i] == N_mesh[0][n] && K_values[i] == K_mesh[k][0]) {
-                    errors_mesh[k][n] = errors[i];
-                    break;
-                }
-            }
+    for (int i = 0; i < N_values.size(); ++i) {
+        QSurfaceDataRow *dataRow = new QSurfaceDataRow(K_values.size());
+        for (int j = 0; j < K_values.size(); ++j) {
+            double N = N_values[i];
+            double K = K_values[j];
+            double error = error_matrix[j][i];
+
+            (*dataRow)[j].setPosition(QVector3D(N, error, K / scaleFactor));
         }
+        *dataArray << dataRow;
     }
 
-    auto fig = matplot::figure();
-    matplot::surf(N_mesh, K_mesh, errors_mesh);
-    matplot::xlabel("N");
-    matplot::ylabel("K");
-    matplot::zlabel("Ошибка");
-    matplot::title(filename);
-    matplot::show();
-};
+    QSurface3DSeries *series = new QSurface3DSeries();
+    series->dataProxy()->resetArray(dataArray);
+
+    graph->addSeries(series);
+    graph->axisX()->setTitle("N");
+    graph->axisX()->setTitleVisible(true);
+    graph->axisY()->setTitle("Ошибка");
+    graph->axisY()->setTitleVisible(true);
+    graph->axisZ()->setTitle("K");
+    graph->axisZ()->setTitleVisible(true);
+
+    graph->activeTheme()->setType(Q3DTheme::ThemeQt);
+    graph->setShadowQuality(QAbstract3DGraph::ShadowQualitySoftLow);
+    graph->scene()->activeCamera()->setCameraPreset(Q3DCamera::CameraPresetFront);
+
+    graph->axisX()->setRange(N_min, N_max);
+    graph->axisY()->setAutoAdjustRange(true);
+    graph->axisZ()->setRange(K_min / scaleFactor, K_max / scaleFactor);
+    return container;
+}

@@ -4,11 +4,7 @@ project(lab5)
 set(CMAKE_CXX_STANDARD 23)
 
 
-add_subdirectory(matplotplusplus)
+find_package(Qt6 COMPONENTS Widgets Charts DataVisualization REQUIRED)
 
 add_executable(NMlab5 NMlab5.cpp parabolic.cpp)
-# target_link_libraries(
-#     NMlab5
-#     PRIVATE ${Python3_LIBRARIES}
-# )
-target_link_libraries(NMlab5 PUBLIC matplot)
+target_link_libraries(NMlab5 PRIVATE Qt6::Widgets Qt6::Charts Qt6::DataVisualization)
