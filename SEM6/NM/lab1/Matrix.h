@@ -1,6 +1,7 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
+#include <cstddef>
 #include <vector>
 #include <map>
 #include <utility>
@@ -868,8 +869,8 @@ namespace numeric {
         }
         return vec;
     }
-
     template<class T>
+
     void printMatrix(const AbstractMatrix<T> &matrix) {
         for (size_t i = 0; i < matrix.rows(); ++i) {
             for (size_t j = 0; j < matrix.cols(); ++j) {
@@ -949,7 +950,7 @@ namespace numeric {
     }
 
     template<class T>
-    std::vector<T> iterationSolve(const AbstractMatrix<T> &matrix, const std::vector<T> &b, T eps) {
+    std::vector<T> iterationSolve(const AbstractMatrix<T> &matrix, const std::vector<T> &b, T eps, size_t MaxIter = 10000) {
         std::size_t n = matrix.rows();
         std::vector<T> beta(n, T());
         Matrix<T> alpha(n, n);
@@ -975,7 +976,7 @@ namespace numeric {
         std::cout << a << "\n";
 
         size_t iter = 0;
-        while (continueIteration) {
+        while (continueIteration && iter < MaxIter) {
             continueIteration = false;
 
             for (std::size_t i = 0; i < n; ++i) {
@@ -1004,7 +1005,7 @@ namespace numeric {
     }
 
     template<class T>
-    std::vector<T> SeidelSolve(const AbstractMatrix<T> &matrix, const std::vector<T> &b, T eps) {
+    std::vector<T> SeidelSolve(const AbstractMatrix<T> &matrix, const std::vector<T> &b, T eps, size_t MaxIter = 10000) {
         std::size_t n = matrix.rows();
         std::vector<T> beta(n, T());
         Matrix<T> alpha(n, n);
@@ -1038,7 +1039,7 @@ namespace numeric {
         std::cout << c << "\n";
 
         size_t iter = 0;
-        while (continueIteration) {
+        while (continueIteration && iter < MaxIter) {
             continueIteration = false;
 
             x_next = x;
@@ -1048,6 +1049,70 @@ namespace numeric {
                     sum += alpha[i][j] * x_next[j];
                 }
                 x_next[i] = sum;
+            }
+
+            if (a < 1) {
+                if (c / (1 - a) * norm(diffVector(x_next, x)) > eps) {
+                    continueIteration = true;
+                }
+            } else {
+                if (norm(diffVector(x_next, x)) > eps) {
+                    continueIteration = true;
+                }
+            }
+
+            x = x_next;
+            ++iter;
+        }
+        std::cout << "\nCount of iterations: " << iter << "\n";
+        return x;
+    }
+
+        template<class T>
+    std::vector<T> UpperRelaxationSolve(const AbstractMatrix<T> &matrix, const std::vector<T> &b, T eps, size_t MaxIter = 10000) {
+        std::size_t n = matrix.rows();
+        std::vector<T> beta(n, T());
+        Matrix<T> alpha(n, n);
+        Matrix<T> CMatrix(n, n);
+        for (std::size_t i = 0; i < n; ++i) {
+            beta[i] = b[i] / matrix[i][i];
+            for (std::size_t j = 0; j < n; ++j) {
+                if (i == j) {
+                    alpha[i][j] = 0;
+                } else {
+                    alpha[i][j] = -matrix[i][j] / matrix[i][i];
+                }
+            }
+        }
+
+        for(size_t i = 0; i < n; ++i) {
+            for(size_t j = i; j < n; ++j) {
+                CMatrix[i][j] = alpha[i][j];
+            }
+        }
+        std::vector<T> x = beta;
+        std::vector<T> x_next(n, T());
+
+        bool continueIteration = true;
+
+        double a = norm(alpha);
+        double c = norm(CMatrix);
+        std::cout << "\nNorm of matrix:\n";
+        std::cout << a << "\n";
+        std::cout << "\nNorm of C matrix:\n";
+        std::cout << c << "\n";
+
+        size_t iter = 0;
+        while (continueIteration && iter < MaxIter) {
+            continueIteration = false;
+
+            x_next = x;
+            for (std::size_t i = 0; i < n; ++i) {
+                T sum = beta[i];
+                for (size_t j = 0; j < n; ++j) {
+                    sum += alpha[i][j] * x_next[j];
+                }
+                x_next[i] = (-0.5) * x[i] + 1.5 * sum;
             }
 
             if (a < 1) {
