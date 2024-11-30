@@ -4,7 +4,6 @@
 #include <vector>
 #include <algorithm>
 #include "../lab1/Matrix.h"
-#include <matplotlibcpp.h>
 
 namespace plt = matplotlibcpp;
 using namespace numeric;
@@ -235,7 +234,6 @@ double secondDerivativeAtX(const std::vector<double>& X, const std::vector<doubl
         throw std::invalid_argument("Need at least three points for quadratic interpolation.");
     }
 
-    // Найти подходящий интервал i так, что x_i <= x < x_{i+1}
     int i = 1;
     for (; i < n - 1; i++) {
         if (X[i] <= x && x < X[i + 1]) {

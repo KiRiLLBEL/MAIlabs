@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.28)
 project(NMlab3)
 
 set(CMAKE_CXX_STANDARD 20)
-find_package(Python3 3.8.10 EXACT REQUIRED COMPONENTS Interpreter Development NumPy)
+
+find_package(Python3 3.8 REQUIRED COMPONENTS Interpreter Development NumPy)
+
+include_directories(${Python3_INCLUDE_DIRS})
 add_executable(NMlab3_1 NMlab3_1.cpp Polynoms.h)
 add_executable(NMlab3_2 NMlab3_2.cpp Polynoms.h)
 add_executable(NMlab3_3 NMlab3_3.cpp Polynoms.h)
