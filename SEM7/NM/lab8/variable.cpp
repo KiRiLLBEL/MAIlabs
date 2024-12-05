@@ -373,3 +373,75 @@ QWidget* createErrorGraph(
 
     return mainWidget;
 }
+
+double calculateError(const Tensor& trueValue, const Tensor& dataValue) {
+    double error = 0.0;
+    int kCount = trueValue.size();
+    int iCount = trueValue[0].size();
+    int jCount = trueValue[0][0].size();
+    
+    for (int k = 0; k < kCount; ++k) {
+        for (int i = 0; i < iCount; ++i) {
+            for (int j = 0; j < jCount; ++j) {
+                error += std::pow(trueValue[k][i][j] - dataValue[k][i][j], 2);
+            }
+        }
+    }
+    return std::sqrt(error);
+}
+
+QWidget* createErrorGraphForDifferentMethods(
+    FunctionDDD realFunction, 
+    FunctionDD phi1, FunctionDD phi2, FunctionDD phi3, FunctionDD phi4, FunctionDD psi,
+    SchemeDimensionTimeConfig& config) {
+
+    QSurfaceDataArray* errorArray = new QSurfaceDataArray();
+
+    for (int N = 3; N <= 25; N += 1) { 
+        QSurfaceDataRow* row = new QSurfaceDataRow(25 - 3 + 1);
+        for (int M = 3; M <= 25; M += 1) { 
+            config.N = N;
+            config.M = M;
+            
+            Tensor trueValues = true_calculation(realFunction, config);
+
+            Tensor computedValues = variadic_ways(phi1, phi2, phi3, phi4, psi, config);
+            
+            double error = calculateError(trueValues, computedValues);
+            
+            (*row)[M - 3].setPosition(QVector3D(double(N), error, double(M)));
+        }
+        errorArray->append(row);
+    }
+
+    Q3DSurface* surface = new Q3DSurface();
+    QSurfaceDataProxy* proxy = new QSurfaceDataProxy();
+    QSurface3DSeries* series = new QSurface3DSeries(proxy);
+    proxy->resetArray(errorArray);
+    surface->addSeries(series);
+
+    surface->axisX()->setTitle("N");
+    surface->axisZ()->setTitle("M");
+    surface->axisY()->setTitle("Error");
+    surface->axisX()->setLabelFormat("%.0f");
+    surface->axisZ()->setLabelFormat("%.0f");
+    surface->axisY()->setLabelFormat("%.6f");
+
+    surface->axisX()->setRange(0, 25);
+    surface->axisZ()->setRange(0, 25);
+    surface->axisY()->setRange(0, 10);
+
+    series->setDrawMode(QSurface3DSeries::DrawSurfaceAndWireframe);
+    series->setFlatShadingEnabled(true);
+    series->setBaseColor(Qt::blue);
+    surface->setTitle("Error Visualization for Different Methods");
+
+    QWidget* container = QWidget::createWindowContainer(surface);
+    QVBoxLayout* layout = new QVBoxLayout();
+    layout->addWidget(container);
+
+    QWidget* mainWidget = new QWidget();
+    mainWidget->setLayout(layout);
+
+    return mainWidget;
+}

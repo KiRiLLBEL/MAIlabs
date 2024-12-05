@@ -35,3 +35,4 @@ std::vector<std::vector<double>> galerkin_calculation(
     GalerkinConfig& config);
 
 QWidget* create2DGraphWithSlider(const std::vector<std::vector<double>>& data1, const std::vector<std::vector<double>>& data2);
+QWidget* create2DGraphWithError(const std::vector<std::vector<double>>& data1, const std::vector<std::vector<double>>& data2);

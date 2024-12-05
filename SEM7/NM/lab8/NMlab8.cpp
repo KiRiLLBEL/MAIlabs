@@ -88,6 +88,9 @@ auto main(int argc, char *argv[]) -> int {
     QWidget* decimalViewErr = createErrorGraph(trueData, decimalData, "Decimal method");
     tabWidget->addTab(decimalViewErr, "Decimal method error");
 
+    QWidget* errorFromNandM = createErrorGraphForDifferentMethods(U_xyt, phi1,  phi2,  phi3,  phi4,  psi,config);
+    tabWidget->addTab(errorFromNandM, "Error from N and M");
+    
     window.resize(1024, 768);
     window.show();
 

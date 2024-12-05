@@ -46,3 +46,8 @@ QWidget* createErrorGraph(
     const Tensor& trueValue, 
     const Tensor& dataValue, 
     const QString& methodName);
+
+QWidget* createErrorGraphForDifferentMethods(
+    FunctionDDD realFunction, 
+    FunctionDD phi1, FunctionDD phi2, FunctionDD phi3, FunctionDD phi4, FunctionDD psi,
+    SchemeDimensionTimeConfig& config);

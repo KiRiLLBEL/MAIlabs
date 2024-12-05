@@ -140,61 +140,106 @@ QWidget* create2DGraphWithSlider(const std::vector<std::vector<double>>& data1, 
     int rowCount = data1.size();
     int columnCount = data1[0].size();
 
-    // Создаем два графика для двух наборов данных
     QLineSeries* series1 = new QLineSeries();
     QLineSeries* series2 = new QLineSeries();
     series1->setName("Аналитическое решение");
     series2->setName("Метод Галеркина");
 
-    // Заполняем графики начальными данными для первой строки (или 0-го слоя)
     for (int j = 0; j < columnCount; ++j) {
-        series1->append(j, data1[0][j]);  // X = j, Y = data1[0][j]
-        series2->append(j, data2[0][j]);  // X = j, Y = data2[0][j]
+        series1->append(j, data1[0][j]);
+        series2->append(j, data2[0][j]);
     }
 
-    // Создаем объекты для графиков
     QChart* chart = new QChart();
     chart->addSeries(series1);
     chart->addSeries(series2);
     chart->setTitle("Methods graphs");
 
-    // Создаем оси
     auto axisX = new QValueAxis;
     axisX->setTitleText("X-axis");
-    axisX->setRange(0, columnCount - 1); // Устанавливаем диапазон оси X
+    axisX->setRange(0, columnCount - 1);
     chart->addAxis(axisX, Qt::AlignBottom);
     series1->attachAxis(axisX);
     series2->attachAxis(axisX);
 
     auto axisY = new QValueAxis;
     axisY->setTitleText("Y-axis");
-    axisY->setRange(-2, 2); // Устанавливаем диапазон оси Y (например, от 0 до 1)
+    axisY->setRange(-2, 2);
     chart->addAxis(axisY, Qt::AlignLeft);
     series1->attachAxis(axisY);
     series2->attachAxis(axisY);
 
-    // Создаем QChartView для отображения графика
     QChartView* chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
 
-    // Создаем слайдер для управления данными
     QSlider* slider = new QSlider(Qt::Horizontal);
     slider->setMinimum(0);
     slider->setMaximum(rowCount - 1);
     slider->setValue(0);
 
-    // Обновляем данные на графиках при изменении значения слайдера
     QObject::connect(slider, &QSlider::valueChanged, [=](int value) {
         series1->clear();
         series2->clear();
-        // Обновляем графики для выбранного слоя (строки)
         for (int j = 0; j < columnCount; ++j) {
             series1->append(j, data1[value][j]);
             series2->append(j, data2[value][j]);
         }
     });
 
-    // Создаем вертикальный layout для размещения графика и слайдера
+    QVBoxLayout* layout = new QVBoxLayout;
+    layout->addWidget(chartView);
+    layout->addWidget(slider);
+
+    QWidget* container = new QWidget();
+    container->setLayout(layout);
+
+    return container;
+}
+
+QWidget* create2DGraphWithError(const std::vector<std::vector<double>>& data1, const std::vector<std::vector<double>>& data2) {
+    int rowCount = data1.size();
+    int columnCount = data1[0].size();
+
+    QLineSeries* errorSeries1 = new QLineSeries();
+
+    errorSeries1->setName("Погрешность метода Галеркина");
+
+    for (int j = 0; j < columnCount; ++j) {
+
+        errorSeries1->append(j, std::abs(data1[0][j] - data2[0][j]));
+    }
+
+    QChart* chart = new QChart();
+    chart->addSeries(errorSeries1);
+    chart->setTitle("График погрешностей");
+
+    auto axisX = new QValueAxis;
+    axisX->setTitleText("X-axis");
+    axisX->setRange(0, columnCount - 1);
+    chart->addAxis(axisX, Qt::AlignBottom);
+    errorSeries1->attachAxis(axisX);
+
+    auto axisY = new QValueAxis;
+    axisY->setTitleText("Y-axis");
+    axisY->setRange(-1, 1);
+    chart->addAxis(axisY, Qt::AlignLeft);
+    errorSeries1->attachAxis(axisY);
+
+    QChartView* chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    QSlider* slider = new QSlider(Qt::Horizontal);
+    slider->setMinimum(0);
+    slider->setMaximum(rowCount - 1);
+    slider->setValue(0);
+
+    QObject::connect(slider, &QSlider::valueChanged, [=](int value) {
+        errorSeries1->clear();
+        for (int j = 0; j < columnCount; ++j) {
+            errorSeries1->append(j, std::abs(data1[value][j] - data2[value][j]));
+        }
+    });
+
     QVBoxLayout* layout = new QVBoxLayout;
     layout->addWidget(chartView);
     layout->addWidget(slider);

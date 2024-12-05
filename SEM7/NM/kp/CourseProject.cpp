@@ -25,8 +25,8 @@ auto main(int argc, char *argv[]) -> int {
         .N = 4,
         .a = 0,
         .b = 1,
-        .T = 1000,
-        .dt = 1.0 / 1001.0,
+        .T = 10,
+        .dt = 0.1 / 11.0,
         .L = 100,
         .dx = 1.0 / 101.0
     };
@@ -52,6 +52,9 @@ auto main(int argc, char *argv[]) -> int {
     
     auto* Graphics = create2DGraphWithSlider(trueData, galerkinData);
     tabWidget->addTab(Graphics, "Graphics");
+
+    auto* Errors = create2DGraphWithError(trueData, galerkinData);
+    tabWidget->addTab(Errors, "Errors");
 
     window.resize(1024, 768);
     window.show();
